@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<!--
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+-->
+<style>
+.video_img_show {
+	border:1px solid #777777;
+}
+.video_img_show div {
+	min-height: 348px;
+	float:left;
+}
+.service_button {
+	margin:18px;
+	border:1px solid #777777;
+	border-radius: 10px;
+	padding:24px 0px 20px;
+}
+.service_button div {
+	display:inline-block;
+	float:left;
+	border-left:2px solid #adaaa1;
+	height:76px;
+	width:234px;
+}
+.service_button .first_button {
+	border:0px;
+}
+.jianche_step {
+	margin-top:10px;
+    border:1px solid #777777;
+    background: url("res/jianche_step.png") no-repeat 42px 0;
+    height: 1900px; 
+    overflow: hidden;
+    position: relative;
+}
+.block1 {
+	margin-top:112px;
+	padding-left: 36px;
+	height: 200px;
+
+}
+#introduce {
+	float: left;
+	padding: 0 70px;
+	width: 358px;
+}
+#query_block {
+	float: left;
+}
+.step_text {
+	font-size: 20px;
+	line-height: 32px;
+}
+.query_input {
+	border: 2px solid #2692d3;
+	height: 55px;
+	width: 350px;
+	margin-left: 65px;
+	margin-top: 60px;
+}
+.query_input .input_wrap {
+	display: inline-block;
+	width:270px;
+	height: 55px;
+
+}
+.query_input input {
+	display: inline-block;
+	width:270px;
+	height: 55px;
+	line-height: 55px;
+	font-size: 20px;
+}
+.query_text {
+	padding: 8px;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: bolder;
+	margin-left: 120px;
+	width: 213px;
+}
+.block2 {
+	margin-top:400px;
+	margin-left: 176px;
+	border: 2px solid #2692d3;
+	height: 166px;
+	padding-top: 16px;
+}
+.caseheader {
+	height:32px;
+	border: 1px solid #69b3e0;
+	background-color: #2692d3;
+	color:#fff;
+}
+.caseheader .title {
+	display: inline-block;
+	padding: 10px 8px;
+	height:14px;
+	font-size:14px;
+}
+.caseheader >span {
+	
+}
+.casecontent {
+	margin: 16px 0 16px;
+	font-size:14px;
+}
+.case {
+	float:left;
+	width:315px;
+	/*padding-left: 148px;
+	width:140px;*/
+}
+.case img{
+	display: inline-block;
+	width:148px;
+	height:100px;
+	margin:15px 0;
+	float: left;
+}
+.case_detail {
+	display: inline-block;
+    padding:0 10px;
+    width:132px;
+    float: left;
+}
+.case_detail_title {
+	display: inline-block;
+	height: 36px;
+	line-height: 18px;
+	margin-bottom: 12px;
+}
+.case_detail li {
+    height: 20px;
+    line-height: 20px;
+}
+.more {
+	display: inline-block;
+	color:#fc8123;
+	font-size:14px;
+	margin: 3px 0;
+}
+.intro_icon {
+	width:190px;
+	text-align: center;
+	background: url("res/jianche_step_icon.png") no-repeat 0 0;
+	overflow: hidden;
+}
+.intro_icon a {
+	color:#000;
+}
+
+#jianche_list {
+	float: left;
+	padding: 0 70px;
+	width: 358px;
+}
+#block3 {
+	margin-top: 132px;
+	width:570px;
+	height: 200px;
+	padding-left:460px;
+}
+#jianche_tool {
+	width: 260px;
+	height: 148px;
+}
+.more_btn {
+	width: 172px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 84px;
+}
+#block4 {
+	margin-top: 60px;
+	height: 200px;
+}
+#report_query {
+	display:inline-block;
+	width:74px;
+	height:55px;
+	line-height:55px;
+	text-align:center;
+	vertical-align: top;
+	margin-left: 6px;
+}
+.toTop {
+	width: 56px;
+	height: 56px;
+	background: url("res/share.png") no-repeat -5px -300px;
+	position: absolute;
+	left:0;
+	bottom: 20px;
+	background-size: 296px;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w style_3w_sel">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="video_img_show clearfix">
+    	<div id="index_pic_show" style="width:530px;">
+    		<div style="margin:6px 8px;width:518px;">
+    		    <img src="res/jianche.jpg">
+    		</div>
+    	</div>
+    	<div id="index_video_show" style="width:448px;">
+    		<video src="res/video/jianche.flv" style="margin:6px 8px;width:432px;height:336px;"></video>
+    	</div>
+    </div>
+    <div class="jianche_step">
+        <div class="block1">
+	        <div id="introduce" class="step_text">DCC384鉴定体系共有140 项检测项目，384 道检测程序，对车辆进行全方位鉴定评估，并依据检测生成的技术状况报告以及车辆信息，参照现行主流的重置成本法和现行市价法，结合大数据分析，为车辆现值、残值提供准确客观的价值评估。</div>
+	    	<div id="query_block">
+	    		<div class="query_input clearfix">
+	    		<input><span id="report_query" class="common_style">查询</span>
+	    	<!--	<p class="query_text">在这里您可以查阅自己之前检测过的车检测报告</p>  -->
+	    		</div>
+	    		
+	    	</div>	
+        </div>
+    	<div id="hot_examples" class="block2" style="width:636px;">
+    		<div class="case">
+				<!--<div class="case_img"></div>-->
+				<img src="res/cases/bkjy/1.jpg">
+				<div class="case_detail">
+				    <span class="case_detail_title">黑色 别克君越</span>
+				    <ul>
+    				    <li>综合评分:<span>67</span></li>
+    				    <li>车况等级:<span>三级</span></li>
+    				    <li>检测师:&nbsp;<span>王继磊</span></li>
+				    </ul>
+				    <a href="report.html?id=" class="more">查看技术报告>></a>
+				</div>
+			</div>
+			<div class="case" style="margin-left:6px;">
+				<!--<div class="case_img"></div>-->
+				<img src="res/cases/bkjy/1.jpg">
+				<div class="case_detail">
+				    <span class="case_detail_title">灰色 别克 GL8</span>
+				    <ul>
+    				    <li>综合评分:<span>88</span></li>
+    				    <li>车况等级:<span>二级</span></li>
+    				    <li>检测师:&nbsp;<span>余杰</span></li>
+				    </ul>
+				    <a href="report.html?id=" class="more">查看技术报告>></a>
+				</div>
+			</div>
+			<!--<div class="case">
+				<div class="case_detail">
+				    <span class="case_detail_title">奥迪奥迪奥迪奥迪奥迪奥迪奥迪奥迪奥迪</span>
+				    <ul>
+    				    <li>综合评分:<span></span></li>
+    				    <li>车况等级:<span></span></li>
+    				    <li>检测师:&nbsp;<span></span></li>
+				    </ul>
+				    <a class="more">查看技术报告>></a>
+				</div>
+			</div>
+			<div class="case" style="margin-left:6px;">
+				<div class="case_detail">
+				    <span class="case_detail_title">奥迪奥迪奥迪奥迪奥迪奥迪奥迪奥迪奥迪</span>
+				    <ul>
+    				    <li>综合评分:<span></span></li>
+    				    <li>车况等级:<span></span></li>
+    				    <li>检测师:&nbsp;<span></span></li>
+				    </ul>
+				    <a class="more">查看技术报告>></a>
+				</div>
+			</div>-->
+		</div>
+    	<div class="block1 clearfix">
+    	<p id="jianche_list" class="step_text">
+鉴定检测过程采用便携式移动检测终端和专业检测设备，鉴定项目包括车辆合法性、车体结构、车辆外观、底盘、发动机舱、功能性、驾驶舱、启动测试、路试性能共九个大项。</p>
+    	<p class="intro_icon" style="float:right;padding-top:180px;margin-right:80px;">
+    		<a id="jianche_detail">详细检测清单下载</a>
+    	</p>
+    		
+    	</div>
+    	<div id="block3">
+    		<div id="jianche_tool">
+    			<p class="step_text">十多种专业的检测工具和设备,轻松实现上门精准鉴定评估。</p>
+    			<a href="tools.html" class="more_btn common_style">了解更多</a>
+    		</div>
+    	</div>
+    	<div id="block4">
+	    	<p class="intro_icon" style="float:left;margin-left: 340px;padding-top: 180px;background-position:16px -200px;">
+	    		<a  href="tools.html" id="app_down">App工具下载</a>
+	    	</p>
+    	    <p class="step_text" style="padding-top:64px;width:300px;padding-left:64px;float:left;">
+    	    	检车无忧自主研发的移动检测终端设备和应用程序，集接单、检测、估值、拍照、上传信息等功能于一体，自动引导检测流程并实时将检测数据上传保存至网站服务器。</p>
+    	</div>
+    	<div class="toTop"></div>
+    </div>
+
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+$("#report_query").bind("click", function(){
+	var id = $("#query_block input").val();
+	if(id == "")
+		return ;
+	location.href = "report.html?query_id="+id;
+});
+
+$(".toTop").bind("click",function(){
+    window.scrollTo(0);
+});
+</script>
+</body>
+</html>

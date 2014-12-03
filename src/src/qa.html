@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+.qa_index {
+    padding: 16px 40px;
+    font-size: 12px;
+}
+.qa_index li {
+    height: 24px;
+    line-height: 24px;
+}
+.qa_index li a {
+    color:#101010;
+}
+.questions {
+    padding: 0 64px 0 44px;
+    margin-bottom: 30px;
+}
+.questions p {
+    color: #b2b2b2;
+}
+.questions .question_title {
+    font-size: 18px;
+    height: 62px;
+    line-height: 62px;
+    color: #2692d3;
+}
+
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+    <div id="nav_area">
+        <div class="nav_content">
+            <a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+            <a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+            <a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+            <a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+            <a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+            <a href="qa.html" class="style_4w style_4w_sel">常&nbsp;见&nbsp;问&nbsp;题</a>
+            <span style="width:28px;"></span>
+            <span id="accout_area">
+                <a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+                <a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+            </span>
+            <div class="sub_nav">
+                <ul>
+                    <li><a href="peimai.html">陪买</a></li>
+                    <li><a href="baoyang.html">保养</a></li>
+                    <li><a href="vip.html">大客户</a></li>
+                    <li><a href="yanbao.html">延保</a></li>
+                    <li><a href="training.html">培训</a></li>
+                </ul>
+            </div>
+            <div id="login_pop" class="big_pop clearfix" style="display:none;">
+                <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+                <div class="pop_content">
+                    <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+                    <div style="font-size:20px;">
+                        <p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+                        <p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <div style="float:left;width:110px;
+                        height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+                        <div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+                    </div>  
+                </div>
+            </div>
+            <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+                <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+                <div class="pop_content">
+                    <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+                    <div style="font-size:20px;">
+                        <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+                        <p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+                        <p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <div style="float:left;width:110px;
+                        height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+                        <div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="qa_index">
+        <p style="font-size:24px; border-bottom:1px solid #2692d3;color:#2692d3;height:40px;line-height:40px;margin-bottom:10px;">常见问题</p>
+        <ul>
+            <li>1.&nbsp;&nbsp;<a href="#qa1">我们是做什么的？</a></li>
+            <li>2.&nbsp;&nbsp;<a href="#qa2">预约检测流程？</a></li>
+            <li>3.&nbsp;&nbsp;<a href="#qa3">为什么选择我们？</a></li>
+            <li>4.&nbsp;&nbsp;<a href="#qa4">检测项目都包括什么？</a></li>
+            <li>5.&nbsp;&nbsp;<a href="#qa5">你们检测会拆卸汽车配件吗？</a></li>
+            <li>6.&nbsp;&nbsp;<a href="#qa6">你们会帮忙给汽车估值吗？</a></li>
+            <li>7.&nbsp;&nbsp;<a href="#qa7">你们都有什么资质?</a></li>
+            <li>8.&nbsp;&nbsp;<a href="#qa8">你们的检测结果有保障吗？</a></li>
+            <li>9.&nbsp;&nbsp;<a href="#qa9">如果我买车后出现事故，并且在质保时间内，你们会不会负责免费保修？</a></li>
+            <li>10.&nbsp;&nbsp;<a href="#qa10">检测之后检测师会给我什么建议吗？</a></li>
+            <li>11.&nbsp;&nbsp;<a href="#qa11">我交钱后能不能退款?</a></li>
+            <li>12.&nbsp;&nbsp;<a href="#qa12">我不是从你们这检测的车，能买延保服务吗？</a></li>
+            <li>13.&nbsp;&nbsp;<a href="#qa13">你们提供帮卖寄售服务吗?</a></li>
+            <li>14.&nbsp;&nbsp;<a href="#qa14">检测车后，我决定买车，你们那能不能帮忙做整备和保养？</a></li>
+            <li>15.&nbsp;&nbsp;<a href="#qa15">你们提供纸质报告吗，我什么时候能看到检测报告</a></li>
+        </ul>
+    </div>
+    <p class="common_style" style="height:30px; line-height:30px;font-size:18px;padding:0 44px;">常见问题：</p>
+    <div class="questions">
+         <p id="qa1" class="question_title">1.我们是做什么的？</p>
+         <p>
+             检车无忧是国内领先的第三方专业汽车检测评估机构，我们专注于二手车汽车检测，以及评估，同时为客户提供相关的售后整备保养服务。我们的愿景是让二手车交易更安全。
+         </p>
+         <p>
+             对于买家，我们不仅仅能为客户提供专业透明的汽车检测服务，详细的检测报告，我们的检测师还可以帮忙为客户给汽车估价，以及跟卖家议价。
+         </p>
+         <p>
+             对于卖家，我们可以提供专业的汽车检测服务和检测报告，客户可以在58，赶集，二手车之家等各大二手车买卖平台发布信息的时候，链接我们的专业检测报告。有了我们专业透明的检测报告，能够帮助卖家客户快速卖车，并且顺利卖出一个公平价。我们也会免费帮忙上传到兄弟网站平台嘀车网供买家查阅 http://dealche.com， 我们不收取检测费外的任何费用。
+         </p>
+        <p id="qa2" class="question_title">2.预约检测流程？</p>
+        <p>您可以通过在线留下你的电话，姓名，并且预约支付下单，或者直接电话联系客服。我们会派专业检测师前往你的地址对车辆进行检测。同时，你也可以来我们的线下服务中心预约。</p>
+        <p id="qa3" class="question_title">3.为什么选择我们？</p>
+        <p>很简单，我们不仅仅有专业的检测评估师，还有国家认可的执照。我们的检测项目也是严格依照二手车鉴定标准执行，并且存储于云服务器供客户随时查阅。同时，我们从事汽车行业多年的评估师能够准确地帮客户对汽车价格进行评估。还有一点，我们的检测评估师的用心服务，让你买卖二手车无忧。</p>
+        <p id="qa4" class="question_title">4.检测项目都包括什么？</p>
+        <p>我们检测项目不仅仅包括汽车车身，漆面，汽车历史，电子系统，发动机，还包括需要升降机配合的汽车底盘，让客户了解汽车真实状况。</p>
+        <p id="qa5" class="question_title">5.你们检测会拆卸汽车配件吗？</p>
+        <p>我们的检测除了底盘护甲，其他配件都不需要拆卸。</p>
+        <p id="qa6" class="question_title">6.你们会帮忙给汽车估值吗？</p>
+        <p>会，我们的专业评估师在汽车行业从业多年，同时我们内部有专业的汽车评估算法，能够帮客户给汽车评估一个合理，公平的价格。</p>
+        <p id="qa7" class="question_title">7.你们都有什么资质?</p>
+        <p>我们的检测评估师都有国家认证的执照，同时我们公司也是国家少许有牌照的机构之一。</p>
+        <p id="qa8" class="question_title">8.你们的检测结果有保障吗？</p>
+        <p>有，我们的专业检测结果都是客观，透明的。汽车维修费用十分昂贵，如更换发动机一般需要40000元左右，维修变速箱也要花费20000元左右，经过我们检测过的车辆，如果符合我们的保障范围 （事故车，水淹车，火烧车除外），我们会免费给客户一个月3000公里质保，如果在此期间如下的配件（保的项目链接）出现任何检测不符合, 并出现问题，我们将负责退还检测费用，并且免费负责修好。</p>
+        <p id="qa9" class="question_title">9.如果我买车后出现事故，并且在质保时间内，你们会不会负责免费保修？</p>
+        <p>不可以，我们提供的是质保服务，只对检测的结果负责。如果之后是由于车主操作不当，出现事故，这是我们服务范围之外的责任。如果你有上保险，建议咨询相关车保险公司负责维修。</p>        
+
+        <p id="qa10" class="question_title">10.检测之后检测师会给我什么建议吗？</p>
+
+        <p>检测师不仅仅会给汽车做详细的检测，出检测报告，还会给出一个整备建议报告。客户可以根据这个报告找检测无忧线下店进行修理整备，或者自行找修理厂整备。</p>
+        <p id="qa11" class="question_title">11.我交钱后能不能退款?</p>
+        <p>如果我们的检测人员未出行，我们可以全额退款；如果检测人员已经出现在预约地点，我们将收取50元勿时费；如果我们的检测人员已经完成了检测，我们将不退还检测费。</p>
+        <p id="qa12" class="question_title">12.我不是从你们这检测的车，能买延保服务吗？</p>
+        <p>不能，我们的延保服务都是针对我们检测过，并且符合条件的车辆开放。</p>
+        <p id="qa13" class="question_title">13.你们提供帮卖寄售服务吗?</p>
+        <p>不提供，我们是一家第三方专业汽车检测评估机构，我们专注于汽车检测，不参与交易环节。我们有兄弟网站：嘀车网 http://dealche.com， 我们可以帮忙将卖家检测过的车辆免费上传到嘀车网平台供买家查阅，具体交易需要卖家买家自行线下解决。</p>
+        <p id="qa14" class="question_title">14.检测车后，我决定买车，你们那能不能帮忙做整备和保养？</p>
+        <p>可以，我们有6000平米的线下服务店，常规整备和保养都能帮忙做，具体费用请参考：（链接）</p>
+        <p id="qa15" class="question_title">15.你们提供纸质报告吗，我什么时候能看到检测报告？</p>
+        <p>没有，为了低碳生活以及环境保护因素，我们采取完全自动化上传检测报告到云服务器，客户只需登陆检测无忧，或者加我们微信，或下载我们的app查阅检测报告。同时我们也会给您的邮箱发送检测报告。</p>
+    </div>
+</div>
+<div id="footer_section">
+    <div id="common_note">
+        <div class="note_item about_us">
+            <ul>
+                <li>检车无忧</li>
+                <li><a>关于我们</a></li>
+                <li><a>联系我们</a></li>
+                <li><a>新闻</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>加入我们</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_veh">
+            <ul>
+                <li>车辆相关</li>
+                <li><a>二手车买卖建议</a></li>
+                <li><a>限迁城市查询</a></li>
+                <li><a>过户流程</a></li>
+                <li><a>国家二手车检测标准</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_qa">
+            <ul>
+                <li>检车无忧</li>
+                <li><a>DCC384检测标准</a></li>
+                <li><a>质保范围</a></li>
+                <li><a>退款政策</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_parner">
+            <ul>
+                <li>兄弟网站：</li>
+                <li class="diche_logo"></li>
+            </ul>
+        </div>
+        <div class="note_item weixing">
+            <span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+            <span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+    <div class="copyright">
+        <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+    </div>
+</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

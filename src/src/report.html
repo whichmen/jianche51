@@ -1,0 +1,1613 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<link rel="stylesheet" type="text/css" href="./car_model.css">
+<script src="jquery-1.11.0.min.js"></script>
+<!--
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+-->
+<style>
+
+</style>
+</head>
+<body>
+<section id="header_section" style="display:none;">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w style_3w_sel">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<style type="text/css">
+.report_struct {
+
+}
+#report_title {
+    height: 38px;
+    margin: 0 auto;
+    padding:36px 0 28px;
+    font-size: 36px;
+    line-height: 38px;
+    background:url("res/share.png") no-repeat no-repeat -158px -190px;
+    text-align: center;
+    letter-spacing: 8px;
+}
+#report_id {
+    width: 225px;
+    display: inline-block;
+    line-height: 31px;
+}
+#report_pubdate {
+	width:185px;
+    display: inline-block;
+    line-height: 31px;
+}
+.report_content {
+    border-top: 2px solid #319ed9;
+    margin-top: 38px;
+    width: 100%;
+}
+.pic_title {
+	height: 60px;
+	line-height: 60px;
+	color: #319ed9;
+}
+.veh_pic {
+	display: block;
+	width:225px;
+	height: 120px;
+	margin: 7px 10px;
+	float: left;
+}
+.block_title {
+	border-bottom: 2px solid #319ed9;
+	height: 32px;
+	line-height: 32px;
+	color:#fff;
+	/*background-color: #319ed9;*/
+	margin: 30px 0;
+	font-size: 18px;
+	background: url("res/report_bar.png") no-repeat 0 0;
+	padding-left: 20px;
+	letter-spacing:4px;
+}
+.right_text {
+	float: right;
+	background-color: #319ed9;
+	width:196px;
+}
+.right_text span {
+	background: #fff;
+	color:#319ed9;
+	height: 30px;
+	width: 76px;
+	display: inline-block;
+	vertical-align: top;
+	border-top: 2px solid #319ed9;
+	text-align: center;
+	line-height: 30px;
+}
+.basic_info {
+
+}
+.basic_info li {
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+}
+.final_score_item {
+	float: left;
+	display: inline-block;
+	border:1px solid #97ceec;
+	width:238px;
+	height: 132px;
+}
+.final_score_item span {
+	display: inline-block;
+}
+.point_result {
+	font-size: 48px;
+	padding-left: 120px;
+	color: #ef9616;
+}
+.advice {
+	border:1px solid #319ed9;
+}
+.advice span {
+	display: inline-block;
+	height: 45x;
+	float: left;
+}
+.advice .advice_tip {
+	padding: 24px;
+	height: 48px;
+	background-color: #319ed9;
+	color: #fff;
+	width: 200px;
+}
+/*表格样式区域，表格公共样式*/
+.table_header {
+	height: 33px;
+	color: #319ed9;
+}
+/*表格样式区域，表格公共样式*/
+.table_style_1 span {
+	display: inline-block;
+	font-size: 14px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+}
+.table_style_1 .header {
+    color: #319ed9;
+    text-align: center;
+	border-top: 1px solid #b6b6b6;
+}
+.table_style_1 p {
+	border-bottom: 1px solid #b6b6b6;
+}
+.table_style_1 .serial {
+    width: 100px;
+    text-align: center;
+    border-left: 1px solid #b6b6b6;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_1 .checkitem {
+    width: 589px;
+    padding: 0 18px;
+    overflow: hidden;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_1 .checkresult {
+    width:251px;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_1 .checkresult_body {
+    width:125px;
+    border-right: 1px solid #b6b6b6;
+}
+
+/*表格样式区域，表格样式2 车身外观检查*/
+.table_style_2 .common {
+    height:22px;
+    line-height: 22px;
+    text-align: center;
+}
+.tb_style_2 .serial {
+    width: 100px;
+    border-left: 1px solid #b6b6b6;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+.tb_style_2 .checkitem {
+	width: 120px;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+.tb_style_2 .checkdesc {
+    width:266px;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+    text-align: left;
+}
+
+/*表格样式3 发动机检查表格*/
+.table_style_3 span {
+	display: inline-block;
+	font-size: 14px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+}
+.table_style_3 .header {
+    color: #319ed9;
+    text-align: center;
+	border-top: 1px solid #b6b6b6;
+}
+.table_style_3 .header span {
+	height: 33px;
+	line-height: 33px;
+}
+.table_style_3 p {
+	border-bottom: 1px solid #b6b6b6;
+}
+.table_style_3 .serial {
+    width: 100px;
+    text-align: center;
+    border-left: 1px solid #b6b6b6;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_3 .checkitem {
+    width: 514px;
+    padding: 0 18px;
+    overflow: hidden;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_3 .checkresult {
+    width:108px;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_3 .checkresult_body {
+    width:110px;
+    border-right: 1px solid #b6b6b6;
+}
+.descript .serial {
+	height:114px;
+	line-height: 114px;
+}
+.descript .detail {
+	padding: 0 18px;
+	height: 114px;
+	width:841px;
+	border-right: 1px solid #b6b6b6;
+}
+/**/
+.table_style_4 span {
+	display: inline-block;
+	font-size: 14px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+}
+.table_style_4 .header {
+    color: #319ed9;
+    text-align: center;
+	border-top: 1px solid #b6b6b6;
+}
+.table_style_4 p {
+	border-bottom: 1px solid #b6b6b6;
+}
+.table_style_4 .serial {
+    width: 110px;
+    text-align: center;
+    border-left: 1px solid #b6b6b6;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_4 .checkitem {
+    width: 213px;
+    overflow: hidden;
+    text-align: center;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_4 .checkresult {
+    width:127px;
+    padding: 0 18px;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_4 .checkresult_body {
+    width:163px;
+    border-right: 1px solid #b6b6b6;
+}
+/*6列带分类的表格样式*/
+.table_style_6 span {
+	display: inline-block;
+	font-size: 14px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+}
+.table_style_6 .header {
+    color: #319ed9;
+    text-align: center;
+	border-top: 1px solid #b6b6b6;
+}
+.table_style_6 p {
+}
+.table_style_6 .serial {
+    width: 98px;
+    text-align: center;
+    border-left: 1px solid #b6b6b6;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+.table_style_6 .category {
+    width: 178px;
+    text-align: center;
+    border-right: 1px solid #b6b6b6;
+}
+.table_style_6 .last {
+    border-bottom: 1px solid #b6b6b6;
+}
+.table_style_6 .checkitem {
+    width: 213px;
+    overflow: hidden;
+    text-align: center;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+.table_style_6 .checkresult_body {
+    width:108px;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+.table_style_6 .detail {
+    width:268px;
+    border-right: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
+}
+#bad_photos {
+	width:412px;
+	height: 222px;
+	background-color: #2b88c3;
+	margin:25px 20px;
+	float: right;
+}
+#bad_points {
+	width:472px; 
+	height:270px;
+	float: left;
+	background: url("res/report.png") no-repeat 0 0;
+	position: relative;
+}
+#repaired {
+	width:472px; 
+	height:270px;
+	margin: 36px auto;
+	background: url("res/report.png") no-repeat 0 0;
+	position: relative;
+}
+.good {
+	background-color: #49b232;
+	color: #fff;
+}
+.bad {
+	background-color: #be1a21;
+	color: #fff;
+}
+.some {
+	background-color: #EF9616;
+	color: #fff;
+}
+#tester {
+	width:168px;
+	height: 52px;
+	border:1px solid #2b88c3;
+}
+</style>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="report_struct">
+        <div style="height:20px; background-color:#319ed9;"></div>
+    	<div id="report_title">DCC车辆检测报告</div>
+    	<div style="margin:0 120px 0 215px;font-size: 24px;">
+	    	<span>报告编号:</span>
+	    	<span id="report_id"></span>
+	    	<span>检测日期:</span>
+	    	<span id="report_pubdate">2014年11月11日</span>
+    	</div>
+    	<div class="report_content">
+	    	<div class="report_block">
+	    		<p class="pic_title">车辆照片展示</p>
+				<div class="clearfix" id="pic_show">
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+					<img class="veh_pic"></img>
+				</div>
+	    	</div>
+			<div class="report_block clearfix">
+				<p class="block_title">车辆基本信息</p>
+				<div class="clearfix" style="margin:36px 10px;">
+					<div class="basic_info" style="width:50%;float:left;">
+						<ul>
+							<li>品牌:<span></span></li>
+							<li>车系:<span></span></li>
+							<li>车型:<span></span></li>
+							<li>车身颜色:<span></span></li>
+							<li>牌照号码:<span></span></li>
+							<li>VIN码:<span></span></li>
+							<li>初次登记日期:<span></span></li>
+							<li>表显里程:<span></span></li>
+							<li>产地:国产/进口<span></span></li>
+							<li>环保标准:<span></span></li>
+						</ul>
+					</div>
+					<div style="width:50%;float:left;padding:24px 0;font-size:20px;line-height:24px;">
+						<p class="common_style" style="height:50px;font-size:20px;line-height:50px;text-align:center;display: block;">车辆总评</p>
+						<span class="final_score_item">
+						<span style="width:52px;color:#319ed9;margin:10px 6px 0	;">车检评分</span>
+						<span class="point_result" id="veh_score">89</span>
+						</span>
+						<span class="final_score_item">
+						<span style="width:52px;color:#319ed9;margin:10px 6px 0;">车况等级</span>
+						<span class="point_result" id="veh_level">二级</span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="report_block clearfix">
+				<p class="block_title">车辆交易信息检查</p>
+				<div class="table_style_1">
+					<p class="header clearfix"><span class="serial">序号</span><span class="checkitem">检查项目</span><span class="checkresult">判定</span></p>
+					<div id="cljyxx">
+						<p class="clearfix">
+						<span class="serial">01</span>
+						<span class="checkitem">是否达到国家强制报废标准</span>
+						<span class="checkresult_body"></span>
+						<span class="checkresult_body"></span>
+						</p>
+		                <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">是否为抵押期间或海关监管期间的车辆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span></p>
+		                <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">是否为人民法院、检察院、行政执法等部门依法查封、扣押期间的车辆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                </p>
+		                <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">是否为通过盗窃、抢劫、诈骗等违法犯罪手段获得的车辆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                </p>
+		                <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">发动机号与机动车登记证书号码是否一致、且无凿改痕迹</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                </p>
+		                <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">车辆识别代码（VIN码）或车架号码与机动车登记证书登记号码是否一致，且无凿改痕迹</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                </p>
+		                <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">是否为走私、非法拼组装车辆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                </p>
+		                <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">是否为法律法规禁止经营车辆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix"><span>车身外观检查</span><span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+                <div class="table_style_4">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">外观部位</span>
+		                <span class="checkresult_body">缺陷描述</span>
+		                <span class="serial">序号</span>
+		                <span class="checkitem">外观部位</span>
+		                <span class="checkresult_body">缺陷描述</span>
+		            </p>
+		            <div id="cswgjc">
+		            <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">发动机舱盖表面</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">17</span>
+		                <span class="checkitem">右前轮毂</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">左前翼子板</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">18</span>
+		                <span class="checkitem">右后轮毂</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">左后翼子板</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">19</span>
+		                <span class="checkitem">左前轮胎</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">右前翼子板</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">20</span>
+		                <span class="checkitem">左后轮胎</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">右后翼子板</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">21</span>
+		                <span class="checkitem">右前轮胎</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">左前门</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">22</span>
+		                <span class="checkitem">右后轮胎</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">左后门</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">23</span>
+		                <span class="checkitem">前大灯</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">右前门</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">24</span>
+		                <span class="checkitem">雾灯</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">右后门</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">25</span>
+		                <span class="checkitem">后尾灯</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">10</span>
+		                <span class="checkitem">行李箱盖</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">26</span>
+		                <span class="checkitem">高位刹车灯</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">11</span>
+		                <span class="checkitem">行李箱内侧</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">27</span>
+		                <span class="checkitem">前挡风玻璃</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">12</span>
+		                <span class="checkitem">车顶</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">28</span>
+		                <span class="checkitem">天窗</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">13</span>
+		                <span class="checkitem">前保险杠</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">29</span>
+		                <span class="checkitem">后挡风玻璃</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">14</span>
+		                <span class="checkitem">后保险杠</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">30</span>
+		                <span class="checkitem">四门车窗玻璃</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">15</span>
+		                <span class="checkitem">左前轮毂</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">31</span>
+		                <span class="checkitem">左后视镜</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">16</span>
+		                <span class="checkitem">左后轮毂</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">32</span>
+		                <span class="checkitem">右后视镜</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            </div>
+	            </div>
+	            <div class="clearfix" style="margin:60px 0;">
+	            	<span id="bad_points">
+	            		<ul>
+	            		    <li class="point" id="p_fdjg"></li>
+	            		    <li class="point" id="p_qyzb_l"></li>
+	            		    <li class="point" id="p_hyzb_l"></li>
+	            		    <li class="point" id="p_qyzb_r"></li>
+	            		    <li class="point" id="p_hyzb_r"></li>
+	            		    <li class="point" id="p_qm_l"></li>
+	            		    <li class="point" id="p_qm_r"></li>
+	            		    <li class="point" id="p_hm_l"></li>
+	            		    <li class="point" id="p_hm_r"></li>
+	            		    <li class="point" id="p_cd"></li>
+	            		    <li class="point" id="p_bxg_f"></li>
+	            		    <li class="point" id="p_bxg_b"></li>
+	            		    <li class="point" id="p_qlg_l"></li>
+	            		    <li class="point" id="p_hlg_l"></li>
+	            		    <li class="point" id="p_qlg_r"></li>
+	            		    <li class="point" id="p_hlg_r"></li>
+	            		    <li class="point" id="p_qdd_l"></li>
+	            		    <li class="point" id="p_qdd_r"></li>
+	            		    <li class="point" id="p_wd_l"></li>
+	            		    <li class="point" id="p_wd_r"></li>
+	            		    <li class="point" id="p_hwd_l"></li>
+	            		    <li class="point" id="p_hwd_r"></li>
+	            		    <li class="point" id="p_scd"></li>
+	            		    <li class="point" id="p_dfbl_f"></li>
+	            		    <li class="point" id="p_tc"></li>
+	            		    <li class="point" id="p_dfbl_b"></li>
+	            		    <li class="point" id="p_hsj_l"></li>
+	            		    <li class="point" id="p_hsj_r"></li>
+	            		    <li class="point" id="p_hbxg"></li>
+	            		    
+
+
+	            		</ul>
+	            	</span>
+	            	<span id="bad_photos"></span>
+	            </div>
+
+	            <div>
+	                 <p style="border-bottom:2px solid #2b88c3;"><span class="common_style" style="display:inline-block;width:80px; height:40px;text-align:center;line-height:40px;font-size:24px;">修复</span></p>
+	            	<div id="repaired">
+	            		<ul>
+	            		    <li class="model" id="m_fdjg"></li>
+	            		    <li class="model" id="m_qyzb_l"></li>
+	            		    <li class="model" id="m_hyzb_l"></li>
+	            		    <li class="model" id="m_qyzb_r"></li>
+	            		    <li class="model" id="m_hyzb_r"></li>
+	            		    <li class="model" id="m_qm_l"></li>
+	            		    <li class="model" id="m_qm_r"></li>
+	            		    <li class="model" id="m_hm_l"></li>
+	            		    <li class="model" id="m_hm_r"></li>
+	            		    <li class="model" id="m_cd"></li>
+	            		    <li class="model" id="m_bxg_b"></li>
+	            		    <li class="model" id="m_qlg_l"></li>
+	            		    <li class="model" id="m_hlg_l"></li>
+	            		    <li class="model" id="m_qlg_r"></li>
+	            		    <li class="model" id="m_hlg_r"></li>
+	            		    <li class="model" id="m_qlt_l"></li>
+	            		    <li class="model" id="m_qlt_r"></li>
+	            		    <li class="model" id="m_hlt_l"></li>
+	            		    <li class="model" id="m_hlt_r"></li>
+	            		    <li class="model" id="m_qdd_l"></li>
+	            		    <li class="model" id="m_qdd_r"></li>
+	            		    <li class="model" id="m_wd_l"></li>
+	            		    <li class="model" id="m_wd_r"></li>
+	            		    <li class="model" id="m_hwd_l"></li>
+	            		    <li class="model" id="m_hwd_r"></li>
+	            		    <li class="model" id="m_scd"></li>
+	            		    <li class="model" id="m_tc"></li>
+	            		    <li class="model" id="m_dfbl_b"></li>
+	            		    <li class="model" id="m_fdbl_f"></li>
+	            		    <li class="model" id="m_hsj_l"></li>
+	            		    <li class="model" id="m_hsj_r"></li>
+	            		    <li class="model" id="m_bxg_f"></li>
+	            		    <li class="model" id="m_hbxg"></li>
+	            		</ul>
+	            	</div>
+	            </div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix">发动机检查<span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+	            <div class="table_style_3">
+	                <p class="header clearfix"><span class="serial">代码</span><span class="checkitem">检查项目</span><span class="checkresult">无</span><span class="checkresult">轻微</span><span class="checkresult">严重</span></p>
+	                <div id="fdjjc">
+	                <p class="clearfix"><span class="serial">01</span><span class="checkitem">机油有无冷却液混入</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">02</span><span class="checkitem">机油位是否正常</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">03</span><span class="checkitem">缸盖外是否有机油渗漏</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">04</span><span class="checkitem">前翼子板内缘</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">05</span><span class="checkitem">水箱框架</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">06</span><span class="checkitem">横拉梁有无凹凸或修复痕迹</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">07</span><span class="checkitem">散热器格栅有无破损</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">08</span><span class="checkitem">蓄电池电极桩柱有无腐蚀</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">09</span><span class="checkitem">蓄电池电解液有无渗漏、缺少</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">10</span><span class="checkitem">发动机皮带有无老化</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">11</span><span class="checkitem">油管有无老化、破损</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">12</span><span class="checkitem">水管有无老化、破损</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">13</span><span class="checkitem">线束有无老化、破损</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">14</span><span class="checkitem">转向油有无异常</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">15</span><span class="checkitem">刹车油有无异常（低于1.5-2.0）</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                <p class="clearfix"><span class="serial">16</span><span class="checkitem">防冻液冰点有无异常（低于-35℃）</span><span class="checkresult"></span><span class="checkresult"></span><span class="checkresult"></span></p>
+	                </div>
+	                <p class="descript clearfix"><span class="serial">缺陷描述</span><span class="detail" id="fdjjc_que_xian_miao_shu"></span></p>
+	            </div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title">功能性检查</p>
+	            <div class="table_style_6">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="category last">类别</span>
+		                <span class="checkitem">零部件名称</span>
+		                <span class="checkresult_body">正常</span>
+		                <span class="checkresult_body">异常</span>
+		                <span class="detail">备注</span>
+		            </p>
+	                <div id="gnxjc">
+	                <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="category">车身外部件</span>
+		                <span class="checkitem">发动机舱盖锁止</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="category"></span>
+		                <span class="checkitem">发动机舱盖液压撑杆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="category"></span>
+		                <span class="checkitem">后备箱液压支撑杆</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="category"></span>
+		                <span class="checkitem">各车门锁止</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="category"></span>
+		                <span class="checkitem">前后雨刮器</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="category last"></span>
+		                <span class="checkitem">立柱密封胶条</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="category">驾驶舱内部件</span>
+		                <span class="checkitem">座椅加热</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="category"></span>
+		                <span class="checkitem">仪表板出风管道</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="category"></span>
+		                <span class="checkitem">中央集控</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">10</span>
+		                <span class="category last"></span>
+		                <span class="checkitem">方向盘功能键</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">11</span>
+		                <span class="category">随车附件</span>
+		                <span class="checkitem">备胎</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">12</span>
+		                <span class="category"></span>
+		                <span class="checkitem">千斤顶</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">13</span>
+		                <span class="category"></span>
+		                <span class="checkitem">轮胎扳手及随车工具</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">14</span>
+		                <span class="category"></span>
+		                <span class="checkitem">三角警示牌</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">15</span>
+		                <span class="category last"></span>
+		                <span class="checkitem">灭火器</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">16</span>
+		                <span class="category">其它</span>
+		                <span class="checkitem">全套钥匙</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">17</span>
+		                <span class="category"></span>
+		                <span class="checkitem">遥控器及功能</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">18</span>
+		                <span class="category"></span>
+		                <span class="checkitem">喇叭高低音色</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">19</span>
+		                <span class="category last"></span>
+		                <span class="checkitem">玻璃加热功能</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		                <span class="detail"></span>
+		            </p>
+
+	            </div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix">驾驶舱检查<span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+	            <div class="table_style_1">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目</span>
+		                <span class="checkresult_body">是</span>
+		                <span class="checkresult_body">否</span>
+		            </p>
+	                <div id="jscjc">
+	                <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">车内是否无水泡痕迹</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">车内后视镜是否完整、无破损、功能正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">座椅是否完整、无破损、功能正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">车内是否整洁、无异味</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">方向盘自由行程转角是否小于20度</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">车顶是否无破损、松动及裂缝和污迹</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">仪表台是否无划痕、配件是否无缺失</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">排挡把手柄是否完好、无破损</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">储物盒是否无裂痕，配件是否无缺失</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">10</span>
+		                <span class="checkitem">天窗是否移动灵活、关闭正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">11</span>
+		                <span class="checkitem">门窗密封条是否良好、无老化</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">12</span>
+		                <span class="checkitem">安全带结构是否完整、功能是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">13</span>
+		                <span class="checkitem">驻车制动系统是否灵活有效</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">14</span>
+		                <span class="checkitem">玻璃窗升降器工作是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">15</span>
+		                <span class="checkitem">门窗工作是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">16</span>
+		                <span class="checkitem">左、右后视镜折叠，调整装置工作是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+	            </div>
+	            <p class="descript clearfix"><span class="serial">缺陷描述</span><span class="detail" id="jscjc_que_xian_miao_shu"></span></p>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix">底盘检查<span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+                <div class="table_style_1">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目</span>
+		                <span class="checkresult_body">是</span>
+		                <span class="checkresult_body">否</span>
+		            </p>
+	                <div id="dpjc">
+	                <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">发动机油底壳是否无渗漏</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">变速箱体是否无渗漏</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">转向节臂球销是否无松动</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">三角臂球销是否无松动</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">底盘是否无托盘变形</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">元宝梁是否无托盘变形</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">传动轴十字轴是否无松旷</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">减震器是否无渗漏</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">减震器是否无损坏</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">10</span>
+		                <span class="checkitem">刹车盘是否工作正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">11</span>
+		                <span class="checkitem">刹车片是否工作正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">12</span>
+		                <span class="checkitem">刹车油管是否无裂痕</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">13</span>
+		                <span class="checkitem">排气管消音器是否无锈蚀、破损</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+	            </div>
+	            <p class="descript clearfix"><span class="serial">缺陷描述</span><span class="detail" id="dpjc_que_xian_miao_shu"></span></p>
+			</div>
+			<div class="report_block">
+			    <p class="block_title">事故车判定</p>
+	            <div class="table_style_4">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目或车体部位</span>
+		                <span class="checkresult_body">状态描述</span>
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目或车体部位</span>
+		                <span class="checkresult_body">状态描述</span>
+		            </p>
+		            <div id="sgcpd">
+		            <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">车体左右对称性</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">10</span>
+		                <span class="checkitem">左前纵深</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">左A柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">11</span>
+		                <span class="checkitem">右前纵深</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">左B柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">12</span>
+		                <span class="checkitem">左前减震器悬挂部位</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">左C柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">13</span>
+		                <span class="checkitem">右前减震器悬挂部位</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">左D柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">14</span>
+		                <span class="checkitem">左后减震器悬挂部位</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">右A柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">15</span>
+		                <span class="checkitem">右后减震器悬挂部位</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">右B柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">16</span>
+		                <span class="checkitem">左底大边</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">右C柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial">17</span>
+		                <span class="checkitem">右底大边</span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">右D柱</span>
+		                <span class="checkresult_body"></span>
+		                <span class="serial"></span>
+		                <span class="checkitem"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            </div>
+	            </div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix">启动测试<span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+	            <div class="table_style_1">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目</span>
+		                <span class="checkresult_body">是</span>
+		                <span class="checkresult_body">否</span>
+		            </p>
+	                <div id="qdcs">
+	                <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">发动机运转、加速是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">车辆启动是否顺畅（时间小于5s，或一次启动）</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">仪表板指示灯显示是否正常，无故障报警</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">各类灯光和调节功能是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">泊车辅助系统是否工作正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">制动防抱死系统（ABS）工作是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">空调系统风量、方向调节、分区控制、自动控制、制冷工作是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">发动机在冷、热车状态下怠速运转是否稳定</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">怠速运转时发动机是否无异响</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">空挡状态下逐渐增加发动机转速，发动机声音过度是否无异响</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+		            <p class="clearfix">
+		                <span class="serial">10</span>
+		                <span class="checkitem">车辆排气是否无异响（白烟、蓝烟、无色）</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+	                </div>
+	                <p class="descript clearfix"><span class="serial">缺陷描述</span><span class="detail" id="qdcs_que_xian_miao_shu"></span></p>
+	            </div>
+			</div>
+			<div class="report_block">
+			    <p class="block_title clearfix">路试测试<span class="right_text">&nbsp;项目评分：<span class="score"></span></span></p>
+	            <div class="table_style_1">
+	                <p class="header clearfix">
+		                <span class="serial">序号</span>
+		                <span class="checkitem">检查项目</span>
+		                <span class="checkresult_body">是</span>
+		                <span class="checkresult_body">否</span>
+		            </p>
+	                <div id="lscs">
+	                <p class="clearfix">
+		                <span class="serial">01</span>
+		                <span class="checkitem">发动机运转、加速是否正常</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+		            </p>
+	                <p class="clearfix">
+		                <span class="serial">02</span>
+		                <span class="checkitem">车辆启动前踩下制动踏板，保持5s-10s，踏板无向下移动的迹象</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">03</span>
+		                <span class="checkitem">踩住制动踏板启动发动机，踏板是否向下移动</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">04</span>
+		                <span class="checkitem">行车制动系最大制动效能在踏板全行程的4/5以内达到</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">05</span>
+		                <span class="checkitem">行驶是否无跑偏，啃胎现象</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">06</span>
+		                <span class="checkitem">制动系统工作是否正常有效、制动不跑偏</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">07</span>
+		                <span class="checkitem">变速箱工作是否正常、无异响</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">08</span>
+		                <span class="checkitem">行驶过程中车辆底盘部位是否无异响</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <p class="clearfix">
+		                <span class="serial">09</span>
+		                <span class="checkitem">行驶过程中车辆转向系统是否无异响</span>
+		                <span class="checkresult_body"></span>
+		                <span class="checkresult_body"></span>
+	                </p>
+	                <div>
+	                <p class="descript clearfix"><span class="serial">缺陷描述</span><span class="detail" id="lscs_que_xian_miao_shu"></span></p>
+	            </div>
+			</div>
+			<div class="report_block">
+				<p class="block_title">整备建议</p>
+				<div class="advice clearfix">
+				<span class="advice_tip common_style">经过一系列检测，针对该车辆做出整备建议：</span>
+				<span id="advice_text"></span>
+				</div>
+				<div class="clearfix" style="border-bottom:4px solid #319ed9;">
+					<p style="margin:20px 0;font-size:20px;color:#969696;border:0;">声明：</p>
+					<p style="font-size:20px;line-height:24px;color:#969696;border:0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本《DDC车辆检测报告》结果仅为检测日期当日被检车辆的技术状况表现与描述，若在当日内被检车辆或因交通事故等原因导致车辆的安全技术状况发生变化，对车辆检测结果产生明显影响时，本检测报告不作为参考依据。</p>
+					<div style="float:right;padding:30px 0;"><span class="common_style" style="height:54px;width:100px;text-align:center;line-height:54px;font-size:18px;">检测员</span><span id="tester"></span></div>
+				</div>
+				<div class="clearfix" style="width:432px;margin:30px auto;"><span class="common_style" style="font-size:18px;width:100px;height:54px;text-align:center;line-height:54px;">下载报表</span><span class="common_style" style="font-size:18px;width:100px;height:54px;text-align:center;line-height:54px;margin-left:66px;">查看证书</span><span class="common_style" style="font-size:18px;width:100px;height:54px;text-align:center;line-height:54px;margin-left:66px;">打&nbsp;&nbsp;印</span></div>
+			</div>
+		</div>
+    </div>
+</div>
+<div id="footer_section" style="display:none;">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+var report;
+function fillData() {
+    $("#report_id").text(report["bao_gao_bian_hao"]);
+    $("#report_pubdate").text(report["jian_ce_ri_qi"]);
+    var html = '<li>品牌:<span>'+report["cljbxx_pin_pai"]+'</span></li><li>车系:<span>'+report["cljbxx_che_xi"]+'</span></li><li>车型:<span>'+report["cljbxx_che_xing"]+'</span></li><li>车身颜色:<span>'+report["cljbxx_che_shen_yan_se"]+'</span></li><li>牌照号码:<span>'+report["cljbxx_pai_zhao_hao_ma"]+'</span></li><li>VIN码:<span>'+report["cljbxx_vin_ma"]+'</span></li><li>初次登记日期:<span>'+report["cljbxx_chu_ci_deng_ji_ri_qi"]+'</span></li><li>表显里程:<span>'+report["cljbxx_biao_xian_li_cheng"]+'</span></li><li>产地:国产/进口<span>'+report["cljbxx_chan_di"]+'</span></li><li>环保标准:<span>'+report["cljbxx_huan_bao_biao_zhun"]+'</span></li>';
+    $(".basic_info ul").html(html);
+    $("#veh_score").text(report["clzp_che_jian_ping_fen"]);
+    $("#veh_level").text(report["clzp_che_jian_ping_ji"]);
+    var arry = $("#cljyxx p");
+    if(report["cljyxx"] != null) {
+    	for(var i=0;i<report["cljyxx"].length; i++){
+	    	if(report["cljyxx"][i] == 0)
+	    	    $(".checkresult_body:first", arry[i]).addClass("good");
+	    	else if(report["cljyxx"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    }
+    }
+    
+    arry = $("#cswgjc .checkresult_body");
+    if(report["cswgjc"] != null){
+		for(var i=0; i< report["cswgjc"].length;i++){
+	    	$(arry[i]).html(report["cswgjc"][i]);
+	    }
+    }
+    
+    var arry = $("#fdjjc p");
+    if(report["fdjjc"] != null){
+		for(var i=0;i<report["fdjjc"].length; i++){
+	    	if(report["fdjjc"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["fdjjc"][i] == 1)
+	    	    $(".checkresult_body:2th", arry[i]).addClass("some");
+	    	else if(report["fdjjc"][i] == 2)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    }
+    }
+    
+    
+    var arry = $("#gnxjc p");
+    if(report["gnxjc"] != null){
+		for(var i=0;i<report["gnxjc"].length; i++){
+	    	if(report["gnxjc"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["gnxjc"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    	var detail = report["gnxjc_bei_zhu"][i];
+	    	if(detail != null)
+	    		$(".detail", arry[i]).text(detail);
+	    }
+    }
+    
+    var arry = $("#jscjc p");
+    if(report["jscjc"] != null){
+		for(var i=0;i<report["jscjc"].length; i++){
+	    	if(report["jscjc"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["jscjc"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    }
+    }
+    
+    var arry = $("#dpjc p");
+    if(report["dpjc"] != null){
+		for(var i=0;i<report["dpjc"].length; i++){
+	    	if(report["dpjc"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["dpjc"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    }
+    }
+    
+    var arry = $("#sgcpd p");
+    if(report["sgcpd"] != null){
+		for(var i=0;i<report["sgcpd"].length; i++){
+	    	var t = report["sgcpd"][i];
+	    	if(t.length > 0)
+	    	    $(".checkresult:first", arry[i]).text(t);
+	    }
+    }
+
+    var arry = $("#qdcs p");
+    if(report["qdcs"] != null){
+		for(var i=0;i<report["qdcs"].length; i++){
+	    	if(report["qdcs"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["qdcs"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+	    }
+    }
+    
+    var arry = $("#lscs p");
+    if(report["lscs"] != null){
+		for(var i=0;i<report["lscs"].length; i++){
+	    	if(report["lscs"][i] == 0)
+	    	    $(".checkresult:first", arry[i]).addClass("good");
+	    	else if(report["lscs"][i] == 1)
+	    	    $(".checkresult_body:last", arry[i]).addClass("bad");
+		}
+    }
+    
+    $("#fdjjc_que_xian_miao_shu").text(report["fdjjc_que_xian_miao_shu"]);
+    $("#jscjc_que_xian_miao_shu").text(report["jscjc_que_xian_miao_shu"]);
+    $("#dpjc_que_xian_miao_shu").text(report["dpjc_que_xian_miao_shu"]);
+    $("#qdcs_que_xian_miao_shu").text(report["qdcs_que_xian_miao_shu"]);
+    $("#lscs_que_xian_miao_shu").text(report["lscs_que_xian_miao_shu"]);
+    $("#advice_text").text(report["zheng_bei_jian_yi"]);
+    $("#tester").text(report["jian_ce_yuan"]);
+    var html ="";
+    for(var i=0; i< 8; i++) {
+    	var href = "";
+    	if(report["zhan_shi_tu_pian"] != null && i < report["zhan_shi_tu_pian"].length)
+    	    href = report["zhan_shi_tu_pian"][i];
+    	html += '<img '+ href +'class="veh_pic"></img>';
+    }
+    $("#pic_show").html(html);
+    var data = report["cswgjc_tu_pian"];
+    var p_html = "";
+    var m_html = "";
+    for(var key in data) {
+       p_html += '<li class="point" id="p_'+key+'" pic="'+data[key]+'"></li>';
+       m_html += '<li class="model" id="m_'+key+'"></li>';
+    }
+    $("#bad_points").html('<ul>'+p_html+'</ul>');
+    $("#repaired").html('<ul>'+m_html+'</ul>');
+    $("#bad_points li").hover(function(e){
+    	var href = $(e.target).attr("pic");
+         $("bad_photos").html('<img src="'+href+'">');
+    });
+}
+var url = host + "jianche/jianche51.php?m=Home&c=Index&a=get_jian_che_bao_gao&bao_gao_bian_hao=";
+var query = $.getUrlParam('query_id');
+if(query.length > 0){
+   	url += query;
+	$.ajax({
+	     type: "GET",
+	     url: url,
+	     success: function(json){
+	        if(json == null || json.return_code == undefined || json.return_code != "success"){
+	        	report = null;
+	        	return;
+	        }
+	        report = json.data;
+	        fillData();
+		},
+		error: function(text){
+			//alert();
+		}
+	});
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+IndexController	Home/Controller/IndexController.class.php	/^class IndexController extends Controller {$/;"	c
+SMSClient	Home/Controller/IndexController.class.php	/^class SMSClient {$/;"	c
+TokenId	Home/Controller/IndexController.class.php	/^				$this->TokenId = $info['Token'];$/;"	v
+User	Home/Controller/IndexController.class.php	/^				$User = M('wen_da');$/;"	v
+__construct	Home/Controller/IndexController.class.php	/^	public function __construct($userId=null, $account=null, $password=null) {$/;"	f
+_curl_post	Home/Controller/IndexController.class.php	/^	function _curl_post($url, $vars) {       $/;"	f
+account	Home/Controller/IndexController.class.php	/^	var $account	= 'admin';$/;"	v
+addNewAccount	Home/Controller/IndexController.class.php	/^	public function addNewAccount($account, $pwd, $signNameID, $memo='UCS Created') {$/;"	f
+add_item_post_method	Home/Controller/IndexController.class.php	/^	public function add_item_post_method(){$/;"	f
+arr	Home/Controller/IndexController.class.php	/^    $arr = array();$/;"	v
+ccc	Home/Controller/IndexController.class.php	/^	public function ccc( $var ) {$/;"	f
+ch	Home/Controller/IndexController.class.php	/^	    $ch = curl_init();    $/;"	v
+check_login_status	Home/Controller/IndexController.class.php	/^public function check_login_status()$/;"	f
+checkstr	Home/Controller/IndexController.class.php	/^	function checkstr($str, $needle){$/;"	f
+current	Home/Controller/IndexController.class.php	/^                $current = &$current[$tag];$/;"	v
+current	Home/Controller/IndexController.class.php	/^                $current = &$current[$tag][$last];$/;"	v
+current	Home/Controller/IndexController.class.php	/^            $current = &$parent[$level-1];$/;"	v
+current	Home/Controller/IndexController.class.php	/^    $current = &$xml_array;$/;"	v
+data	Home/Controller/IndexController.class.php	/^		$data = xml2array($output);$/;"	v
+data	Home/Controller/IndexController.class.php	/^	    $data = curl_exec($ch);$/;"	v
+data_encode	Home/Controller/IndexController.class.php	/^	function data_encode($data, $keyprefix = "", $keypostfix = "") {$/;"	f
+fetchSMS	Home/Controller/IndexController.class.php	/^	public function fetchSMS() {$/;"	f
+first_key	Home/Controller/IndexController.class.php	/^					$first_key = array_pop(array_keys($ret['Nodes']['SMSGroup']));$/;"	v
+getStockDetails	Home/Controller/IndexController.class.php	/^	public function getStockDetails() {$/;"	f
+get_all_items	Home/Controller/IndexController.class.php	/^	public function get_all_items($method_name, $start, $length) {$/;"	f
+get_item	Home/Controller/IndexController.class.php	/^	public function get_item($method_name, $query){$/;"	f
+get_yan_zheng_ma	Home/Controller/IndexController.class.php	/^	public function get_yan_zheng_ma($num){$/;"	f
+info	Home/Controller/IndexController.class.php	/^					$info = $ret['Count']['value']>1?$ret['Nodes']['SMSGroup']:array($ret['Nodes']['SMSGroup']);$/;"	v
+info	Home/Controller/IndexController.class.php	/^					$info = array();$/;"	v
+info	Home/Controller/IndexController.class.php	/^				$info = array('SegmentUpperLimit'=> $ret['SegmentUpperLimit']['value'],$/;"	v
+info	Home/Controller/IndexController.class.php	/^				$info = array('stockRemain'=>$ret['StockRemain']['value'],$/;"	v
+info	Home/Controller/IndexController.class.php	/^			$info = array('jobid'=>$ret['JobID']['value']$/;"	v
+last	Home/Controller/IndexController.class.php	/^                $last = count($current[$tag]) - 1;$/;"	v
+login	Home/Controller/IndexController.class.php	/^	public function login() { $/;"	f
+login	Home/Controller/IndexController.class.php	/^	public function login(){$/;"	f
+logout	Home/Controller/IndexController.class.php	/^	public function logout($token=null) {$/;"	f
+name	Home/Controller/IndexController.class.php	/^							$name = '1_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '2_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '3_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '4_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '5_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '6_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '7_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '8_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = '9_';$/;"	v
+name	Home/Controller/IndexController.class.php	/^							$name = 'zhan_shi_tu_pian_';$/;"	v
+name_bei_zhu	Home/Controller/IndexController.class.php	/^							$name_bei_zhu = '4_';$/;"	v
+new	Home/Controller/IndexController.class.php	/^				$new=D( $method_name );$/;"	v
+new	Home/Controller/IndexController.class.php	/^		$new=D( $method_name );$/;"	v
+new	Home/Controller/IndexController.class.php	/^		$new=D( 'yong_hu' );$/;"	v
+new	Home/Controller/IndexController.class.php	/^		$new=D( I('param.method_name') );$/;"	v
+opened_tags	Home/Controller/IndexController.class.php	/^    $opened_tags = array();$/;"	v
+output	Home/Controller/IndexController.class.php	/^		$output = SMSClient::_curl_post($url, $param);$/;"	v
+output	Home/Controller/IndexController.class.php	/^		$output = SMSClient::_curl_post($url, array('Token'=>$token?$token:$this->TokenId));$/;"	v
+output	Home/Controller/IndexController.class.php	/^		$output = SMSClient::_curl_post($url, array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password));$/;"	v
+param	Home/Controller/IndexController.class.php	/^			$param = array('Token'=>$this->TokenId);$/;"	v
+param	Home/Controller/IndexController.class.php	/^			$param = array('Token'=>$this->TokenId, 'Phones'=>$phones, 'Content'=>$content, 'SendTime'=>$sendTime, 'SendType'=>$sendType, 'PostFixNumber'=>$postFixNumber);$/;"	v
+param	Home/Controller/IndexController.class.php	/^			$param = array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password);$/;"	v
+param	Home/Controller/IndexController.class.php	/^			$param = array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password,$/;"	v
+param	Home/Controller/IndexController.class.php	/^		$param = array('Token'=>$this->TokenId, 'Account'=>$account, 'Password'=>$pwd, 'SignNameID'=>$signNameID, 'Memo'=>$memo);$/;"	v
+parents	Home/Controller/IndexController.class.php	/^    $parents = array();$/;"	v
+parser	Home/Controller/IndexController.class.php	/^    $parser = xml_parser_create();$/;"	v
+password	Home/Controller/IndexController.class.php	/^	var $password	= 'dealche222010';$/;"	v
+result	Home/Controller/IndexController.class.php	/^				$result=$new->where( 'bao_gao_bian_hao="6666"')->limit(0,1)->select();$/;"	v
+result	Home/Controller/IndexController.class.php	/^		$result=$new->limit($start, $length)->select();$/;"	v
+result	Home/Controller/IndexController.class.php	/^		$result=$new->where( $query )->select();$/;"	v
+result	Home/Controller/IndexController.class.php	/^		$result=$new->where('yong_hu_id="$yong_hu_id"')->select(); $/;"	v
+result	Home/Controller/IndexController.class.php	/^            $result = $value;$/;"	v
+result	Home/Controller/IndexController.class.php	/^            $result = array();$/;"	v
+result	Home/Controller/IndexController.class.php	/^        $result = '';$/;"	v
+ret	Home/Controller/IndexController.class.php	/^			$ret = $data['ROOT'];$/;"	v
+returnLoginStatus	Home/Controller/IndexController.class.php	/^	public function returnLoginStatus(){$/;"	f
+sendSMS	Home/Controller/IndexController.class.php	/^	public function sendSMS($phones, $content, $postFixNumber=1, $sendTime='', $sendType=1) {$/;"	f
+sent_ret	Home/Controller/IndexController.class.php	/^		$sent_ret = $smsclient->sendSMS('13522362783;', session('yan_zheng_ma'));$/;"	v
+smsclient	Home/Controller/IndexController.class.php	/^		$smsclient = new SMSClient();$/;"	v
+tmparray	Home/Controller/IndexController.class.php	/^		$tmparray = explode($needle,$str);$/;"	v
+url	Home/Controller/IndexController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/DirectFetchSMS";$/;"	v
+url	Home/Controller/IndexController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/DirectSend";$/;"	v
+url	Home/Controller/IndexController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/FetchSMS";$/;"	v
+url	Home/Controller/IndexController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/MessSendSMS";$/;"	v
+url	Home/Controller/IndexController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/AddSubAccount";$/;"	v
+url	Home/Controller/IndexController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/GetStockDetails";$/;"	v
+url	Home/Controller/IndexController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/UserLogOff";$/;"	v
+url	Home/Controller/IndexController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/UserLogin";$/;"	v
+userId	Home/Controller/IndexController.class.php	/^	var $userId	= '963900';$/;"	v
+vars	Home/Controller/IndexController.class.php	/^	  $vars=null;$/;"	v
+wen_da	Home/Controller/IndexController.class.php	/^				$wen_da = M('wen_da');$/;"	v
+xml2array	Home/Controller/IndexController.class.php	/^function xml2array($contents, $get_attributes=1) {$/;"	f
+xml_array	Home/Controller/IndexController.class.php	/^    $xml_array = array();$/;"	v
+yan_zheng_ma	Home/Controller/IndexController.class.php	/^			$yan_zheng_ma = rand(100000,200000);$/;"	v
+yong_hu	Home/Controller/IndexController.class.php	/^				$yong_hu = M('yong_hu');$/;"	v
+yong_hu_id	Home/Controller/IndexController.class.php	/^		$yong_hu_id = $data['yong_hu_id'];$/;"	v
+SMSClient	Home/Controller/SMSClientController.class.php	/^class SMSClient extends Controller{$/;"	c
+TokenId	Home/Controller/SMSClientController.class.php	/^				$this->TokenId = $info['Token'];$/;"	v
+__construct	Home/Controller/SMSClientController.class.php	/^	public function __construct($userId=null, $account=null, $password=null) {$/;"	f
+_curl_post	Home/Controller/SMSClientController.class.php	/^	function _curl_post($url, $vars) {       $/;"	f
+account	Home/Controller/SMSClientController.class.php	/^	var $account	= 'admin';$/;"	v
+addNewAccount	Home/Controller/SMSClientController.class.php	/^	public function addNewAccount($account, $pwd, $signNameID, $memo='UCS Created') {$/;"	f
+arr	Home/Controller/SMSClientController.class.php	/^    $arr = array();$/;"	v
+ch	Home/Controller/SMSClientController.class.php	/^	    $ch = curl_init();    $/;"	v
+current	Home/Controller/SMSClientController.class.php	/^                $current = &$current[$tag];$/;"	v
+current	Home/Controller/SMSClientController.class.php	/^                $current = &$current[$tag][$last];$/;"	v
+current	Home/Controller/SMSClientController.class.php	/^            $current = &$parent[$level-1];$/;"	v
+current	Home/Controller/SMSClientController.class.php	/^    $current = &$xml_array;$/;"	v
+data	Home/Controller/SMSClientController.class.php	/^		$data = xml2array($output);$/;"	v
+data	Home/Controller/SMSClientController.class.php	/^	    $data = curl_exec($ch);$/;"	v
+data_encode	Home/Controller/SMSClientController.class.php	/^	function data_encode($data, $keyprefix = "", $keypostfix = "") {$/;"	f
+fetchSMS	Home/Controller/SMSClientController.class.php	/^	public function fetchSMS() {$/;"	f
+first_key	Home/Controller/SMSClientController.class.php	/^					$first_key = array_pop(array_keys($ret['Nodes']['SMSGroup']));$/;"	v
+getStockDetails	Home/Controller/SMSClientController.class.php	/^	public function getStockDetails() {$/;"	f
+info	Home/Controller/SMSClientController.class.php	/^					$info = $ret['Count']['value']>1?$ret['Nodes']['SMSGroup']:array($ret['Nodes']['SMSGroup']);$/;"	v
+info	Home/Controller/SMSClientController.class.php	/^					$info = array();$/;"	v
+info	Home/Controller/SMSClientController.class.php	/^				$info = array('SegmentUpperLimit'=> $ret['SegmentUpperLimit']['value'],$/;"	v
+info	Home/Controller/SMSClientController.class.php	/^				$info = array('stockRemain'=>$ret['StockRemain']['value'],$/;"	v
+info	Home/Controller/SMSClientController.class.php	/^			$info = array('jobid'=>$ret['JobID']['value']$/;"	v
+last	Home/Controller/SMSClientController.class.php	/^                $last = count($current[$tag]) - 1;$/;"	v
+login	Home/Controller/SMSClientController.class.php	/^	public function login() { $/;"	f
+logout	Home/Controller/SMSClientController.class.php	/^	public function logout($token=null) {$/;"	f
+opened_tags	Home/Controller/SMSClientController.class.php	/^    $opened_tags = array();$/;"	v
+output	Home/Controller/SMSClientController.class.php	/^		$output = SMSClient::_curl_post($url, $param);$/;"	v
+output	Home/Controller/SMSClientController.class.php	/^		$output = SMSClient::_curl_post($url, array('Token'=>$token?$token:$this->TokenId));$/;"	v
+output	Home/Controller/SMSClientController.class.php	/^		$output = SMSClient::_curl_post($url, array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password));$/;"	v
+param	Home/Controller/SMSClientController.class.php	/^			$param = array('Token'=>$this->TokenId);$/;"	v
+param	Home/Controller/SMSClientController.class.php	/^			$param = array('Token'=>$this->TokenId, 'Phones'=>$phones, 'Content'=>$content, 'SendTime'=>$sendTime, 'SendType'=>$sendType, 'PostFixNumber'=>$postFixNumber);$/;"	v
+param	Home/Controller/SMSClientController.class.php	/^			$param = array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password);$/;"	v
+param	Home/Controller/SMSClientController.class.php	/^			$param = array('UserID'=>$this->userId, 'Account'=>$this->account, 'Password'=>$this->password,$/;"	v
+param	Home/Controller/SMSClientController.class.php	/^		$param = array('Token'=>$this->TokenId, 'Account'=>$account, 'Password'=>$pwd, 'SignNameID'=>$signNameID, 'Memo'=>$memo);$/;"	v
+parents	Home/Controller/SMSClientController.class.php	/^    $parents = array();$/;"	v
+parser	Home/Controller/SMSClientController.class.php	/^    $parser = xml_parser_create();$/;"	v
+password	Home/Controller/SMSClientController.class.php	/^	var $password	= 'dealche222010';$/;"	v
+result	Home/Controller/SMSClientController.class.php	/^            $result = $value;$/;"	v
+result	Home/Controller/SMSClientController.class.php	/^            $result = array();$/;"	v
+result	Home/Controller/SMSClientController.class.php	/^        $result = '';$/;"	v
+ret	Home/Controller/SMSClientController.class.php	/^			$ret = $data['ROOT'];$/;"	v
+sendSMS	Home/Controller/SMSClientController.class.php	/^	public function sendSMS($phones, $content, $postFixNumber=1, $sendTime='', $sendType=1) {$/;"	f
+url	Home/Controller/SMSClientController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/DirectFetchSMS";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/DirectSend";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/FetchSMS";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^			$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/MessSendSMS";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/AddSubAccount";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/GetStockDetails";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/UserLogOff";$/;"	v
+url	Home/Controller/SMSClientController.class.php	/^		$url = "http:\/\/www.mxtong.net.cn\/GateWay\/Services.asmx\/UserLogin";$/;"	v
+userId	Home/Controller/SMSClientController.class.php	/^	var $userId	= '963900';$/;"	v
+vars	Home/Controller/SMSClientController.class.php	/^	  $vars=null;$/;"	v
+xml2array	Home/Controller/SMSClientController.class.php	/^function xml2array($contents, $get_attributes=1) {$/;"	f
+xml_array	Home/Controller/SMSClientController.class.php	/^    $xml_array = array();$/;"	v
+IndexController	Home/Controller/UserController.class.php	/^class IndexController extends Controller {$/;"	c
+Pagemodel	Home/Controller/UserController.class.php	/^	$Pagemodel = D("user");$/;"	v
+insert	Home/Controller/UserController.class.php	/^public function insert()$/;"	f
+topicid	Home/Controller/UserController.class.php	/^		$topicid = $Pagemodel->add(); \/\/add方法会返回新添加的记录的主键值$/;"	v
+user	Home/Controller/UserController.class.php	/^	$user=$_POST['user'];$/;"	v
+vo	Home/Controller/UserController.class.php	/^	$vo = $Pagemodel->create(); $/;"	v
+FormModel	Home/Model/FormModel.class.php	/^class FormModel extends Model {$/;"	c
+_auto	Home/Model/FormModel.class.php	/^    protected $_auto    =   array($/;"	v
+_validate	Home/Model/FormModel.class.php	/^    protected $_validate    =   array($/;"	v
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+APP_DEBUG	jianche51.php	/^define( 'APP_DEBUG', TRUE );$/;"	d

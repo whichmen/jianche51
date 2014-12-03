@@ -1,0 +1,75 @@
+[ 2014-12-01T00:02:40+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+
+[ 2014-12-01T00:03:00+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+
+[ 2014-12-01T00:04:01+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+
+[ 2014-12-01T00:04:44+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+
+[ 2014-12-01T00:04:50+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=add_item_post_method
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+
+[ 2014-12-01T00:06:00+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+
+[ 2014-12-01T00:18:00+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+
+[ 2014-12-01T00:20:42+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+
+[ 2014-12-01T00:21:40+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000110s ]
+
+[ 2014-12-01T00:22:15+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000154s ]
+
+[ 2014-12-01T00:22:57+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+
+[ 2014-12-01T00:23:45+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000101s ]
+
+[ 2014-12-01T00:23:52+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+
+[ 2014-12-01T00:24:18+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+
+[ 2014-12-01T00:25:01+08:00 ] 192.168.11.141 /jianche51/jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+

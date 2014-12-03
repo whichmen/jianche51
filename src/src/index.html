@@ -1,0 +1,659 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<!--
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+-->
+<style>
+.video_img_show {
+	border:1px solid #777777;
+	height:348px;
+}
+.video_img_show div {
+	height:348px;
+	float:left;
+}
+#index_video_show video {
+	width:423px;
+	height: 336px;
+	border: 1px solid #ccc;
+}
+.service_button {
+	margin:18px;
+	border:1px solid #777777;
+	border-radius: 10px;
+	overflow: hidden;
+	/*background-color: #ccc;*/
+}
+.service_button a {
+	display:inline-block;
+	padding:24px 0px 20px;
+	float:left;
+	height:76px;
+	width:235px;
+	background: url("res/index.png") no-repeat 21px -876px;
+}
+.service_button .first_button {
+	border:0px;
+	width: 236px;
+}
+.service_button .sb_sel {
+	background-color: #ccc;
+}
+.sb_jianche_on {
+	background-position: 24px -1276px!important;
+}
+.sb_peimai_on {
+	background-position: 22px -1376px!important;
+}
+.sb_yanbao_on {
+	background-position: 24px -1476px!important;
+}
+.sb_vip_on {
+	background-position: 0px -1576px!important;
+}
+.report_query {
+	display:inline-block;
+	float:left;
+    width:340px;
+    color:#fff;
+    padding:8px 10px 14px;
+    background-color: #2692d3;
+}
+#input_report_query {
+    padding:12px 8px;
+    height:12px;
+    border:0;
+    width:260px;
+    vertical-align: top;
+}
+#btn_report_quey {
+	display: inline-block;
+	border-left: 1px solid #919191;
+	margin:4px 0;
+	height:28px;
+	width:28px;
+	padding-left: 20px;
+	vertical-align: baseline;
+	background: url("res/share.png") no-repeat no-repeat 16px -696px;
+}
+.index_adv {
+	margin:0px 10px;
+	float:left;
+	border:1px solid #adaaa1;
+}
+.professor_team {
+	border-top: 1px solid #919191;
+	margin: 20px 0;
+	padding-top:22px;
+    height: 390px;
+}
+.professor_left {
+	width:333px;
+	padding:0 30px 0 12px;
+	float:left;
+	color:#2692d3;
+}
+#professors {
+	border-top:1px solid #2692d3;
+	border-bottom:1px solid #2692d3;
+	height: 148px;
+}
+#professors img {
+	height:148px;
+}
+.professor_right {
+    width:605px;
+    float:left;
+}
+.question_searcher {
+	display:inline-block;
+	border:1px solid #77bae4;
+	height:32px;
+	padding:3px;
+	width:452px;
+}
+.question_searcher span {
+	display:inline-block;
+}
+#input_search {
+	display: inline-block;
+	width:306px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: top;
+}
+#question_pannel {
+	 width:567px;
+	 height:270px;
+	 padding-right: 38px;
+	 border:1px solid #d2cfca;
+	 margin-top:4px;
+}
+#question_pannel li {
+	height: 16px;
+	padding: 12px 0;
+	border-bottom: 1px dashed #f8f8f8;
+}
+#question_pannel li span {
+	display:inline-block;
+	float:left;"
+}
+#question_pannel .icon {
+	background: url("res/share.png") no-repeat no-repeat -100px -600px;
+	width:16px;
+	height:16px;
+	margin:auto 5px;
+}
+.btn_question_category {
+	width:68px;
+	height:30px;
+	line-height:30px;"
+}
+.btn_question_category:hover {
+	color:#2692d3;
+	background-color: #fff;
+}
+#caseAndApp {
+	/*height:220px;*/
+	border: 1px solid #777;
+	padding:12px;
+}
+.caseheader {
+	height:32px;
+	border: 1px solid #69b3e0;
+	background-color: #2692d3;
+	color:#fff;
+}
+.caseheader .title {
+	display: inline-block;
+	padding: 10px 8px;
+	height:14px;
+	font-size:14px;
+}
+.caseheader >span {
+	
+}
+.casecontent {
+	margin: 16px 0;
+	font-size:14px;
+}
+.case {
+	float:left;
+	width:315px;
+	/*padding-left: 148px;
+	width:140px;*/
+}
+.case img{
+	display: inline-block;
+	width:148px;
+	height:100px;
+	margin:15px 0;
+	float: left;
+}
+.case_detail {
+	display: inline-block;
+    padding:0 10px;
+    width:132px;
+    float: left;
+}
+.case_detail_title {
+	display: inline-block;
+	height: 36px;
+	line-height: 18px;
+	margin-bottom: 12px;
+}
+.case_detail li {
+    height: 20px;
+    line-height: 20px;
+}
+.dominant {
+    height:70px;
+    border-top: 1px solid #777777;
+    padding:32px 60px 24px ;
+}
+
+.dominant .pic {
+	display:inline-block;
+	float:left;
+    width:66px;
+    height:66px;
+    margin: 0 8px 0 12px;
+}
+.dominant .text {
+	display: inline-block;
+	text-align: center;
+	float:left;
+    width:80px;
+    height:64px;
+    font-size: 12px;
+}
+#linkAndParner {
+	border:1px solid #777777;
+	font-size: 11px;
+	color:#cccccc;
+	padding:8px 32px;
+}
+
+#linkAndParner a {
+	dislay:inline-block;
+	float:left;
+	margin: 5px 0;
+	padding-right: 8px;
+	padding-left:6px;
+	border-right: 1px solid #cccccc;
+}
+.more {
+	display: inline-block;
+	color:#fc8123;
+	font-size:14px;
+	margin: 3px 0;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w style_3w_sel">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a class="online_qq"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="video_img_show clearfix">
+    	<div id="index_pic_show" style="width:530px;">
+    		<div style="margin:6px 8px;width:518px;height:336px;"><img src="res/index_top.jpg"></div>
+    	</div>
+    	<div id="index_video_show" style="width:448px;">
+    		<video src="res/video/jiance.mp4" style="margin:6px 8px;width:432px;height:336px;"></video>
+    	</div>
+    </div>
+    <div class="service_button clearfix">
+    	<a href="jianche.html" id="sb_jianche" class="first_button" style="background-position:24px -876px;"></a>
+    	<a href="peimai.html" id="sb_peimai" style="background-position:23px -976px;"></a>
+    	<a  href="yanbao.html"id="sb_yanbao" style="background-position:24px -1076px;"></a>
+    	<a href="vip.html" id="sb_vip" class="clearfix" style="background-position:0px -1176px;"></a>
+    </div>
+    <div class="clearfix">
+    	<div class="report_query">
+    		<span style="display:inline-block; border-bottom:1px solid #fff; padding-bottom:4px;">汽车检测报告查询&nbsp;</span>
+    		<div style="margin:4px 0;height:36px;background-color:#fff;">
+    		    <input id="input_report_query" placeholder="输入VIN码或电话号码">
+    		    <a href="javascript:void(0);" id="btn_report_quey"></a>
+    		</div>
+    	</div>
+    	<div class="index_adv" style="width:590px; height:88px; ">
+    		<img style="margin: 2px auto;display: block;" src="res/index_center.jpg">
+    	</div>
+    </div>
+    <div class="professor_team">
+    	<div class="professor_left">
+    		<div>
+    			<p style="margin:0;">
+    			    <span>评估团队&nbsp;&nbsp;</span>
+    			    <span style="font-size:8px">The evaluation team</span>
+    			</p>
+    			<div id="professors">
+    			    <img src="res/pics/pgs1.jpg">
+    			</div>
+    		</div>
+    		<div style="height:218px;"><img style="margin: 0 auto;display: block;"src="res/jianche_tools.jpg"></div>
+    	</div>
+    	<div class="professor_right">
+    		<div style="margin:18px 0;">
+    			<p class="question_searcher">
+    			    <span style="border-right:1px solid #b2afa6;color:#6292d3;padding:8px;height:16px">问答搜索</span><input id="input_search"><a id="qa_query" href="javascript:void(0);" class="btn_type1" style="width:60px;height:30px;line-height:30px;margin-left: 10px;">搜&nbsp;索</a>
+    			</p>
+    			<a class="btn_type1"  href="questions.html" style="width:85px;height:40px;line-height:40px;margin:0 25px;">我要提问</a>
+    		</div>
+    		<div>
+    			<div class="clearfix">
+	    			<span style="color:#fb9004;float:left;height:30px;line-height:30px;font-size:20px;">近期热门问答&nbsp;</span>
+	    			<p style="float:left;" id="qa_types">
+		    			<span class="btn_type1 btn_question_category" type="da_yi">答疑</span>
+		    			<span class="btn_type1 btn_question_category" type="ping_gu">评估</span>
+		    			<span class="btn_type1 btn_question_category" type="jian_ce">检测</span>
+		    			<span class="btn_type1 btn_question_category" type="bao_yang">维修</span>
+	    			</p>
+	    			<a href="questions.html" style="float:right;font-size:14px;color:#bfbfbf;height:30px;line-height:40px;margin-right:16px;">了解更多&nbsp;>&nbsp;></a>
+    			</div>
+    			<div id="question_pannel">
+    				<ul>
+    					<li class="clearfix">
+	    					<span class="icon"></span>
+	    					<span>检测一台车大概需要多长时间?</span>
+	    					<span style="float:right;">2014-11-30</span>
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div id="caseAndApp">
+    	<div class="caseheader">
+    		<span class="title" style="width:616px;">车辆检测案例&nbsp;&nbsp;<font>Auto inspection sample reports</font></span>
+    		<b style="border:1px solid #fff;"></b>
+    		<span class="title">检车神器&nbsp;&nbsp;<font>Auto inspection App</font></span>
+    	</div>
+    	<div class="casecontent clearfix">
+    		<div id="hot_examples" class="cases clearfix" style="width:636px;float:left;">
+    			<div class="case">
+    				<!--<div class="case_img"></div>-->
+    				<img src="res/cases/bkjy/1.jpg">
+    				<div class="case_detail">
+    				    <span class="case_detail_title">黑色 别克君越</span>
+    				    <ul>
+	    				    <li>综合评分:<span>67</span></li>
+	    				    <li>车况等级:<span>三级</span></li>
+	    				    <li>检测师:&nbsp;<span>王继磊</span></li>
+    				    </ul>
+    				    <a href="report.html?id=" class="more">查看技术报告>></a>
+    				</div>
+    			</div>
+    			<div class="case" style="margin-left:6px;">
+    				<!--<div class="case_img"></div>-->
+    				<img src="res/cases/bkjy/1.jpg">
+    				<div class="case_detail">
+    				    <span class="case_detail_title">灰色 别克 GL8</span>
+    				    <ul>
+	    				    <li>综合评分:<span>88</span></li>
+	    				    <li>车况等级:<span>二级</span></li>
+	    				    <li>检测师:&nbsp;<span>余杰</span></li>
+    				    </ul>
+    				    <a href="report.html?id=" class="more">查看技术报告>></a>
+    				</div>
+    			</div>
+    		</div>
+    		<div style="border:1px solid #2692d3;float:left;height:116px;"></div>
+    		<div style="float:left;width:316px;">
+    			<p style="display:inline-block;float:left;margin:0 14px;width:90px;height:124px;"><img src="res/jianche_app.jpg"></p>
+    			<p style="display:inline-block;float:left;padding:4px;width:172px;font-size:12px;line-height:16px;">
+    			    <span>
+    				检车无忧自主研发的移动检测终端设备和应用程序，集接单、检测、估值、拍照、上传信息等功能于一体，自动引导检测流程并实时将检测数据上传保存至网站服务器。<br><br>
+    				</span>
+    				<a href="tools.html" style="color:#fb9004;">了解更多...</a>
+    			</p>
+    		</div>
+    	</div>
+    </div>
+    <div class="dominant clearfix">
+        <span class="pic" style="background: url('res/index.png') no-repeat no-repeat 0 -100px;"></span>
+    	<a class="text"><br>国家认证<br>汽车检测机构</a>
+    	<span class="pic" style="background: url('res/index.png') no-repeat no-repeat -236px -100px;"></span>
+    	<span class="text">中国领先<br>汽车检测<br>评估互联网<br>平台</span>
+    	<span class="pic" style="background: url('res/index.png') no-repeat no-repeat 0 -200px;"></span>
+    	<span class="text"><br>专业检测<br>评估团队</span>
+    	<span class="pic" style="background: url('res/index.png') no-repeat no-repeat -236px -200px;"></span>
+    	<span class="text"><br>384项全面<br>细致检测</span>
+    	<span class="pic" style="background: url('res/index.png') no-repeat no-repeat 0 -300px;"></span>
+    	<span class="text"><br>30天检测质<br>量风险担保</span>
+    </div>
+    <!--
+    <div id="linkAndParner">
+    	<div style="font-size:18px;color:#3498d6">
+    	    <span id="friend_link">友情链接</span>
+    	    <span style="color:#4f4f4f">&nbsp;|&nbsp;<span>
+    	    <span id="partterns_link">合作伙伴</span>
+    	</div>
+    	<div id="all_links" style="display:block;" class="clearfix">
+    	</div>
+    	<div id="all_partterns" style="display:none;" class="clearfix">
+    	</div>
+    </div>
+    -->
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车二手车检测评估有限公司</span>
+      <!--  <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>C -->
+	</div>
+
+
+<div class="beian">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;center;">京ICP备14037074号-2</span>
+      <!--  <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>C -->
+	</div>
+
+
+
+
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+function play_teachers() {
+	var teachers = ["pgs1.jpg","pgs2.jpg","pgs3.jpg","pgs4.jpg"];
+	var idx = 0;
+    var interval;
+    
+    function play(idx) {
+        $("#professors img").attr("src", "res/pics/"+teachers[idx]);
+    }
+    if(teachers.length > 0) {
+    	interval = setInterval(function(){
+    		play(idx);
+    		idx = (idx + 1) % teachers.length;
+    	}, 3000);
+    }
+}
+play_teachers();
+function fillData(text) {
+	//alert(text);
+}
+function outofData(text) {
+	//alert(text);
+}
+//AjaxGet("http://", fillData, outofData);
+
+$("#btn_report_quey").bind("click",function() {
+	var id = $("#input_report_query").val();
+	if(id.length <= 0)
+    	return;
+    location.href="report.html?query_id="+id;
+});
+$("#qa_query").bind("click",function() {
+	var input = $("#input_search").val();
+	if(input.length <= 0)
+    	return;
+    location.href="qa.html?query_text="+input;
+});
+$(".service_button a").hover(function(e) {
+	$(e.target).addClass("sb_sel");
+	if(e.target.id == "sb_jianche"){
+		$(e.target).addClass("sb_jianche_on");
+	}else if(e.target.id == "sb_peimai"){
+		$(e.target).addClass("sb_peimai_on");
+	}else if(e.target.id == "sb_yanbao"){
+		$(e.target).addClass("sb_yanbao_on");
+	}else if(e.target.id == "sb_vip"){
+		$(e.target).addClass("sb_vip_on");
+	}
+},function(e) {
+	$(e.target).removeClass("sb_sel");
+	if(e.target.id == "sb_jianche"){
+		$(e.target).removeClass("sb_jianche_on");
+	}else if(e.target.id == "sb_peimai"){
+		$(e.target).removeClass("sb_peimai_on");
+	}else if(e.target.id == "sb_yanbao"){
+		$(e.target).removeClass("sb_yanbao_on");
+	}else if(e.target.id == "sb_vip"){
+		$(e.target).removeClass("sb_vip_on");
+	}
+});
+
+$("#friend_link").bind("click", function(e){
+	$("#all_links").show();
+	$("#all_partterns").hide();
+});
+$("#partterns_link").bind("click", function(e){
+	$("#all_links").hide();
+	$("#all_partterns").show();
+});
+var questions;
+var teachers;
+function fillQA(type) {
+	if(questions == null || questions[type] == null){
+		$("#question_pannel").html("");
+		return ;
+	}
+    var html = "<ul>";
+    var data = questions[type];
+    for(var i=0; i< data.length; i++) {
+    	var href = "myquestion.html?id=" + data[i].id;
+    	html += "<a style='display:block;' href='"+ href +"'><li class='clearfix'><span class='icon'></span>";
+    	html += "<span>"+ data[i].biao_ti+"</span><span style='float:right;'>"+data[i].posttime+"</span></li></a>";
+    }
+    html += "</ul>";
+    $("#question_pannel").html(html);
+}
+
+$.ajax({
+     type: "GET",
+     url: host + "jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10",
+     success: function(json){
+        if(json == null || json.return_code == undefined || json.return_code != "success"){
+        	questions = null;
+        	return;
+        }
+        questions = json.data;
+        fillQA("jian_ce");
+	},
+	error: function(text){
+		//alert();
+	}
+});
+
+/*
+function fillLinks() {
+	var patterns = [{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""},{"text":"","href":""}];
+	var friends = ["","",""];
+	var html = "";
+	for(var i=0; i<patterns.length; i++) {
+        html += "<a href='"+ patterns[i].href +"'>" + patterns[i].txt + "</a>";
+	}
+	$("#all_links").html(html);
+	for(var i=0; i<patterns.length; i++) {
+        html += "<img src='"+ patterns[i] +"'>";
+	}
+	$("#all_partterns").html(html);
+}
+*/
+$("#qa_types span").bind("click",function(e){
+    var type = $(e.target).attr("type");
+    fillQA(type);
+});
+</script>
+</body>
+</html>

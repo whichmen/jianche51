@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+.query_input {
+	border: 2px solid #2692d3;
+	height: 40px;
+	width: 620px;
+	margin: 30px auto;
+}
+.query_input .input_wrap {
+	display: inline-block;
+	width:4800px;
+	height: 40px;
+
+}
+.query_input input {
+	display: inline-block;
+	width:480px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+}
+#report_query {
+	display:inline-block;
+	width:140px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	vertical-align: top;
+}
+.title {
+	font-size: 24px;
+	height: 44px;
+	line-height: 44px;
+	color:#2592d5;
+	padding: 0 12px;
+	border-bottom: 4px solid #2692d3;
+}
+.part2 {
+	margin-top:8px;
+	border: 1px solid #ccc;
+	padding: 10px 20px;
+}
+.part2 .left {
+    width: 690px;
+    float: left;
+    
+}
+.part2 .right {
+    width: 248px;
+    float: left;
+}
+.team {
+	border-right: 4px solid #2692d3;
+}
+.team .item {
+	margin-top: 30px;
+	width:318px;
+	height: 110px;
+	float: left;
+	font-size: 14px;
+	margin-left:10px;
+}
+.team img {
+	display: block;
+	float: left;
+	width:104px;
+	height: 108px;
+	margin-right:14px;
+}
+.team .sub_title {
+	font-size: 16px;
+	line-height:32px;
+}
+.q_box {
+    padding:30px 18px 0;
+}
+.q_box input {
+	width:156px;
+	border: 1px solid #82c0fd;
+	height:32px 
+}
+.q_box select {
+	width:54px;
+	border: 1px solid #82c0fd;
+	height:34px 
+}
+.q_box textarea {
+	width:206px;
+	height: 138px;
+	border: 1px solid #82c0fd;
+}
+.part4 {
+	margin-top:12px;
+	padding-top: 40px;
+	border-top: 4px dashed #2692d3;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+	padding: 10px 0;
+}
+.part4 .title {
+	font-size: 20px;
+	color:#2592d5;
+    height: 40px;
+    line-height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+.question_searcher {
+	display:inline-block;
+	border:1px solid #77bae4;
+	height:32px;
+	padding:3px;
+	width:452px;
+}
+.question_searcher span {
+	display:inline-block;
+}
+#input_search {
+	display: inline-block;
+	width:306px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: top;
+}
+#question_pannel {
+	 width:680px;
+	 height:409px;
+	 padding-right: 38px;
+	 border:1px solid #d2cfca;
+	 float: left;
+}
+#question_pannel li {
+	height: 16px;
+	padding: 12px 0;
+	border-bottom: 1px dashed #f8f8f8;
+}
+#question_pannel li span {
+	display:inline-block;
+	float:left;"
+}
+#question_pannel .icon {
+	background: url("res/share.png") no-repeat no-repeat -100px -600px;
+	width:16px;
+	height:16px;
+	margin:auto 5px;
+}
+.btn_question_category {
+	width:68px;
+	height:30px;
+	line-height:30px;"
+}
+.btn_question_category:hover {
+	color:#2692d3;
+	background-color: #fff;
+}
+.yanbao_link {
+	height: 38px;
+	line-height: 38px;
+	list-style-image: url("res/yanbao.png") no-repeat 0px 0px;
+	border-bottom: 1px dashed #9c9c9c;
+}
+.more {
+	display: inline-block;
+	color:#fc8123;
+	font-size:14px;
+	margin: 3px 0;
+	position: absolute;
+	right: 0;
+}
+.pager {
+    height: 16px;
+}
+.team img {
+	width:104px;
+	overflow: hidden;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w style_3w_sel">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="part1">
+        <div class="query_input clearfix">
+	    	<input><span id="report_query" class="common_style">查询</span>
+	    </div>
+    </div>
+    <div class="part2 clearfix">
+        <div class="left">
+        	<p class="title">专家团队</p>
+        	<div class="team clearfix">
+        		<div class="item">
+        		    <img src="res/pics/zj/zj1.jpg">
+    		    	<p class="sub_title">刘盾</p>
+	    			<p class="sub_content" style="background-position:0px 0px;">个人介绍<br>曾在大搜车和大众4s店担任二手车总监。
+6年工作经验，熟悉整体二手车行业，国家高级鉴定评估师</p>
+	    	    </div>
+	    	    <div class="item">
+	    	        <img src="res/pics/zj/zj2.jpg">
+		    		<p class="sub_title">李峰</p>
+		    		<p class="sub_content" style="background-position:0px 0px;">个人介绍<br>三年的上海大众汽车维修经验，4S店工作四年，国家高级鉴定评估师</p>
+	    	    </div>
+	    	    <div class="item">
+	    	    	<img src="res/pics/zj/zj3.jpg">
+		    		<p class="sub_title">余杰</p>
+		    		<p class="sub_content" style="background-position:0px 0px;">个人介绍<br>奔驰4s店三年工作经验，国家高级评估师</p>
+	    	    </div>
+	    	    <div class="item">
+	    	    	<img src="res/pics/zj/zj4.jpg">
+		    		<p class="sub_title">王继磊</p>
+		    		<p class="sub_content" style="background-position:0px 0px;">个人介绍<br>宝马4s店工作三年  国家高级评估师  </p>
+	    	    </div>
+        	</div>
+        </div>
+        <div class="right">
+        	<p class="title">专家答疑</p>
+        	<div class="q_box">
+        		<input id="ask_title" placeholder="输入要提问的标题"><select id="ask_type">
+        			<option value="jian_ce">检测</option>
+        			<option value="da_yi">答疑</option>
+        			<option value="ping_gu">评估</option>
+        			<option value="bao_yang">维修</option>
+        		</select>
+        		<textarea id="ask_text" placeholder="输入要提问的内容"></textarea>
+        		<div id="ask_submit" class="common_style" style="height:42px;width:144px;text-align:center;line-height:42px;font-size:20px;margin: 10px auto;
+display: block;">提交问题</div>
+        	</div>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="part4 clearfix">
+        <div class="clearfix" style="border-bottom:1px solid #ccc;padding-bottom:4px;margin-bottom:10px;">
+			<span style="color:#fb9004;float:left;height:30px;line-height:30px;font-size:20px;">近期热门问答&nbsp;</span>
+			<p style="float:left;" id="qa_types">
+    			<span class="btn_type1 btn_question_category" type="da_yi">答疑</span>
+    			<span class="btn_type1 btn_question_category" type="ping_gu">评估</span>
+    			<span class="btn_type1 btn_question_category" type="jian_ce">检测</span>
+    			<span class="btn_type1 btn_question_category" type="bao_yang">维修</span>
+			</p>
+		</div>
+		<div class="clearfix">
+			<div id="question_pannel" class="clearfix">
+				<ul>
+					<li class="clearfix">
+						<span class="icon"></span>
+						<span></span>
+						<span style="float:right;">2014-11-5</span>
+					</li>
+				</ul>
+				<div class="pager"></div>
+			</div>
+			
+	    	<div style="float:left;width:214px;padding:0 14px;border:1px solid #cccccc;margin-left:4px;">
+	    		<p class="title">二手车常识</p>
+	    		<div style="position:relative;">
+	    			<ul style="height:160px;">
+		    			<li class="yanbao_link">汽车过户需要哪些手续</li>
+		    			<li class="yanbao_link">汽车过户需要哪些手续</li>
+		    			<li class="yanbao_link">汽车过户需要哪些手续</li>
+		    			<li class="yanbao_link">汽车过户需要哪些手续</li>
+		    		</ul>
+		    		<a class="more" href="">查看更多>></a>
+	    		</div>
+	    		<div>
+	    			<img style="margin: 0 auto;display: block;" src="res/qa_pic.jpg">
+	    		</div>			
+		</div>
+
+    		
+    	</div>
+    </div>
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+var url = host + "jianche/jianche51.php?m=Home&c=Index&a=add_item_post_method";
+function getData() {
+	var obj = {};
+	obj["method_name"]="wen_da";
+	obj["lei_mu"] = $("#ask_type").attr("value");
+	obj["biao_ti"] = $("#ask_title").val();
+	obj["nei_rong"] = $("#ask_text").val();
+	var f = document.createElement("form");
+	document.body.appendChild(f);
+	 f.method = 'post';
+	var i = document.createElement("input");
+	i.type = "text";
+	f.appendChild(i);
+	i.value =  $("#ask_title").val();
+	i.name = "biao_ti";
+	var j = document.createElement("input");
+    j.type = "text";
+    f.appendChild(j);
+    j.value = $("#ask_type").val();
+    j.name = "lei_mu";
+    var k = document.createElement("input");
+    k.type = "text";
+    f.appendChild(k);
+    k.value = $("#ask_text").val();
+    k.name = "nei_rong";
+	var m = document.createElement("input");
+    m.type = "text";
+    f.appendChild(m);
+    m.value = "wen_da";
+    m.name = "method_name";
+	f.action = url;
+	f.submit();
+	document.body.removeChild(f);
+}
+$("#ask_submit").bind("click",function(){
+    getData();
+});
+// $.post(url, getData(), function(text){
+// 	if(text.length <= 0)
+// 		return ;
+// 	var obj = JSON.parse(text);
+// 	if(obj.return_code == undefined || obj.return_code != "success")
+// 		return ;
+// 	alert("提交成功");
+// });
+var questions;
+function fillQA(type) {
+	if(questions == null || questions[type] == null){
+		$("#question_pannel").html("");
+		return ;
+	}
+    var html = "<ul>";
+    var data = questions[type];
+    for(var i=0; i< data.length; i++) {
+    	var href = "myquestion.html?id=" + data[i].id;
+    	html += "<a style='display:block;' href='"+ href +"'><li class='clearfix'><span class='icon'></span>";
+    	html += "<span>"+ data[i].biao_ti+"</span><span style='float:right;'>"+data[i].posttime+"</span></li></a>";
+    }
+    html += "</ul>";
+    $("#question_pannel").html(html);
+}
+$.ajax({
+     type: "GET",
+     url: host + "jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=wen_da&start=0&length=10",
+     success: function(json){
+        if(json == null || json.return_code == undefined || json.return_code != "success"){
+        	questions = null;
+        	return;
+        }
+        questions = json.data;
+        fillQA("jian_ce");
+	},
+	error: function(text){
+		//alert();
+	}
+});
+$("#qa_types span").bind("click",function(e){
+    var type = $(e.target).attr("type");
+    fillQA(type);
+});
+$("#report_query").bind("click",function(e){
+    var text = $(".query_input input").val();
+    if(text.length > 0) {
+    	location.href ="search.html?query="+text;
+    }
+});
+</script>
+</body>
+</html>

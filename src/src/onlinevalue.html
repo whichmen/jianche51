@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+.form_block_1 {
+    width: 700px;
+    padding-top: 25px;
+    float: left;
+}
+.report_query {
+    width:192px;
+    padding: 25px;
+    margin-left: 10px;
+    border:1px solid #c9c5c4;
+    float: left;
+}
+.title {
+	border-left: 4px solid #2b88c3;
+	color: #2b88c3;
+	height: 24px;
+	line-height: 24px;
+	font-size: 20px;
+}
+.form_block_1 form {
+    padding: 8px 0 8px 72px;
+}
+form p {
+	margin:20px 0;
+	height: 22px;
+	line-height: 22px;
+}
+form span {
+	vertical-align: top;
+}
+.input_common {
+	display: inline-block;
+	height: 18px;
+	border:1px solid #2b88c3;
+}
+.input_common input {
+	vertical-align: top;
+	height: 18px;
+	line-height: 18px;
+}
+.select_btn {
+	display: inline-block;
+	height: 18px;
+	width: 15px;
+	background: url("res/lt_icon.png") no-repeat 0 0; 
+}
+.input_style_1 input {
+	width: 85px;
+}
+.input_style_2 input {
+	width: 214px;
+}
+.input_style_3 input {
+	width: 50px;
+}
+.item_name {
+	display: inline-block;
+	width:65px;
+}
+.radiobox {
+	padding-left: 32px;
+	margin-right: 10px;
+	background: url("res/lt_icon.png") no-repeat 10px -96px;
+}
+.selected {
+	background: url("res/lt_icon.png") no-repeat -276px 4px;
+}
+.form_block_2 .title {
+    border:0px;
+    
+}
+.form_block_2 .subtitle{
+    border:0px;
+    font-size: 14px;
+}
+
+.form_block_2 .h_gap {
+	display: inline-block;
+	background-color: #2b88c3;
+	height: 4px;
+	margin: 5px 2px;
+	width:20px;
+}
+.form_block_2 .subtitle .h_gap{
+    border:0px;
+    margin:3px 2px;
+}
+.form_block_2 p {
+	margin:20px 0;
+	height: 22px;
+	line-height: 22px;
+}
+.form_block_2 .subblock {
+	margin-left: 36px;
+}
+.form_block_2 .item_name {
+	display: inline-block;
+	min-width: 65px;
+	width:auto;
+}
+#nssm {
+	display: block;
+	border:1px solid #ccc;
+	width:425px;
+	height: 102px;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+    <div id="nav_area">
+        <div class="nav_content">
+            <a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+            <a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+            <a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+            <a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+            <a href="onlinevalue.html" class="style_4w style_4w_sel">在&nbsp;线&nbsp;评&nbsp;估</a>
+            <a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+            <span style="width:28px;"></span>
+            <span id="accout_area">
+                <a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+                <a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+            </span>
+            <div class="sub_nav">
+                <ul>
+                    <li><a href="peimai.html">陪买</a></li>
+                    <li><a href="baoyang.html">保养</a></li>
+                    <li><a href="vip.html">大客户</a></li>
+                    <li><a href="yanbao.html">延保</a></li>
+                    <li><a href="training.html">培训</a></li>
+                </ul>
+            </div>
+            <div id="login_pop" class="big_pop clearfix" style="display:none;">
+                <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+                <div class="pop_content">
+                    <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+                    <div style="font-size:20px;">
+                        <p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+                        <p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <div style="float:left;width:110px;
+                        height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+                        <div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+                    </div>  
+                </div>
+            </div>
+            <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+                <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+                <div class="pop_content">
+                    <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+                    <div style="font-size:20px;">
+                        <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+                        <p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+                        <p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <div style="float:left;width:110px;
+                        height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+                        <div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section" style="margin-bottom:90px;">
+    <div class="clearfix" style="margin:0 auto;">
+	    <div class="form_block_1">
+	        <p style="padding:4px;border-bottom:1px solid #c9c5c4;">
+	        <span class="title">&nbsp;&nbsp;车辆基本信息（必填）</span>
+	        <span style="font-size:12px;color:#e88f49;">在您填写车辆相关信息后，会根据您给出的信息进行评估，给您一个二手车市场的参考价</span>
+	        </p>
+	    	<form>
+	    	    <p>
+	    		<span class="item_name">品&nbsp;&nbsp;牌&nbsp;&nbsp;</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span>
+	    		<span>&nbsp;车系&nbsp;&nbsp;</span><span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span>
+	    		<span>&nbsp;型号&nbsp;&nbsp;</span><span class="input_common input_style_2"><input type="text"><span class="select_btn"></span></span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">初次上牌</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;年&nbsp;&nbsp;</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;月&nbsp;&nbsp;</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">变速箱</span><span>
+	    		<span class="radiobox selected" data="gear" value="auto">自动档</span>
+	    		<span class="radiobox" data="gear" value="mannual">手动档</span>
+	    		<span class="radiobox" data="gear" value="mixed">手自一体</span>
+	            </span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">排&nbsp;量&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;升&nbsp;&nbsp;</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">行驶里程</span><span>&nbsp;<input name="cover" style="height:18px;border:1px solid #2b88c3;"></input></span><span>&nbsp;&nbsp;万公里</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">使用性质</span>
+	    		<span class="radiobox selected" data="usage" value="self">私人</span>
+	    		<span class="radiobox" data="usage" value="business">公务商务</span>
+	    		<span class="radiobox" data="usage" value="transport">营运</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">4S店保养</span>
+	    		<span class="radiobox selected" data="4S" value="yes">是</span>
+	    		<span class="radiobox" data="4S" value="no">否</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">现注册地</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;省/自治区&nbsp;&nbsp;</span>
+	    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;市/县&nbsp;&nbsp;</span>
+	    		</p>
+	    		<p>
+	    		<span class="item_name">是否进口</span>
+	    		<span class="radiobox selected" data="import" value="yes">是</span>
+	    		<span class="radiobox" data="import" value="no">否</span>
+	    		</p>
+	    	</form>
+	    </div>
+	    <div class="report_query">
+	    	<p style="padding:4px;border-bottom:1px solid #c9c5c4;"><span class="title">&nbsp;&nbsp;评估报告查询</span></p>
+	    	<p style="margin:30px 0 12px 8px;color:#b7b7b7;"><span>请输入VIN码</span></p>
+	    	<p style="margin:0 auto 36px;display: inline-block;"><input style="width:172px;height:24px;border:1px solid #b7b7b7;"></p>
+	    	<span class="common_style" style="width:120px;display:block;margin:0 auto;height:25px;line-height:25px;text-align:center;">查询报告</span>
+	    </div>
+    </div>
+    <div class="form_block_2">
+        <p style="padding:4px;border-bottom:1px solid #c9c5c4;">
+        <span class="title"><span class="h_gap" style="width:24px;"></span>&nbsp;&nbsp;其他信息（选填）</span>
+        <span style="font-size:12px;color:#e88f49;">更详细的信息有助于我们做出更精准的报价</span>
+        </p>
+        <div class="subblock">
+        	<p style="padding:4px;">
+        <span class="title subtitle"><span class="h_gap" style="width:20px;"></span>&nbsp;&nbsp;车辆信息</span>
+        </p>
+        <div style="margin-left:55px;">
+        <p>
+    		<span class="item_name">是否一手车</span>
+    		<span class="radiobox selected" data="4S" value="yes">是</span>
+    		<span class="radiobox" data="4S" value="no">否</span>
+    	</p>
+    	<p>
+    		<span class="item_name">保险险种</span>
+    		<span class="radiobox selected" data="4S" value="yes">是</span>
+    		<span class="radiobox" data="4S" value="no">否</span>
+    	</p>
+        <p>
+    		<span class="item_name">保险有效期	</span>
+    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;年&nbsp;&nbsp;</span>
+    		<span class="input_common input_style_1"><input type="text"><span class="select_btn"></span></span><span>&nbsp;&nbsp;月&nbsp;&nbsp;</span>
+    	</p>
+    	<p>
+    		<span class="item_name">开票价	</span>
+    		<span>&nbsp;<input name="cover" style="height:18px;border:1px solid #2b88c3;"></input></span><span>&nbsp;&nbsp;请输入整数，如100000</span>
+    	</p>
+    	</div>
+        </div>
+        <div class="subblock">
+        <p style="padding:4px;">
+        <span class="title subtitle"><span class="h_gap" style="width:20px;"></span>&nbsp;&nbsp;车辆配置信息</span>
+        </p>
+        <div style="margin-left:55px;">
+            <p>
+    		<span class="item_name">气囊数</span>
+    		<span class="radiobox selected" data="4S" value="yes">是</span>
+    		<span class="radiobox" data="4S" value="no">否</span>
+    		</p>
+    		<p>
+    		<span class="item_name">转向动力</span>
+    		<span class="radiobox selected" data="ABBS" value="yes">有</span>
+    		<span class="radiobox" data="4S" value="no">无</span>
+    		<span class="radiobox" data="4S" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">电动车窗</span>
+    		<span class="radiobox selected" data="ddcc" value="ycqm">原车前门</span>
+    		<span class="radiobox" data="ddcc" value="ycsm">原车四门</span>
+    		<span class="radiobox" data="ddcc" value="jzqm">加装前门</span>
+    		<span class="radiobox" data="ddcc" value="jzsm">加装四门</span>
+    		<span class="radiobox" data="ddcc" value="no">无</span>
+    		<span class="radiobox" data="ddcc" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">ABS</span>
+    		<span class="radiobox selected" data="ABS" value="yes">有</span>
+    		<span class="radiobox" data="ABS" value="no">无</span>
+    		<span class="radiobox" data="ABS" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">天窗</span>
+    		<span class="radiobox selected" data="tc" value="yes">有</span>
+    		<span class="radiobox" data="tc" value="no">无</span>
+    		<span class="radiobox" data="tc" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">空调</span>
+    		<span class="radiobox selected" data="kt" value="man">手动</span>
+    		<span class="radiobox" data="kt" value="auto">自动</span>
+    		<span class="radiobox" data="kt" value="no">无</span>
+    		<span class="radiobox" data="kt" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">自动巡航</span>
+    		<span class="radiobox selected" data="zdxh" value="yes">有</span>
+    		<span class="radiobox" data="zdxh" value="no">无</span>
+    		<span class="radiobox" data="zdxh" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">真皮座椅</span>
+    		<span class="radiobox selected" data="zpzy" value="origin">原车</span>
+    		<span class="radiobox" data="zpzy" value="extern">加装</span>
+    		<span class="radiobox" data="zpzy" value="no">无</span>
+    		<span class="radiobox" data="zpzy" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">电动座椅</span>
+    		<span class="radiobox selected" data="ddzy" value="yes">有</span>
+    		<span class="radiobox" data="ddzy" value="no">无</span>
+    		<span class="radiobox" data="ddzy" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">座椅加热</span>
+    		<span class="radiobox selected" data="zyjr" value="yes">有</span>
+    		<span class="radiobox" data="zyjr" value="no">无</span>
+    		<span class="radiobox" data="zyjr" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">遥控门锁</span>
+    		<span class="radiobox selected" data="ykms" value="origin">原车</span>
+    		<span class="radiobox" data="ykms" value="extern">加装</span>
+    		<span class="radiobox" data="zpzy" value="no">无</span>
+    		<span class="radiobox" data="ykms" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">反光镜电动折叠</span>
+    		<span class="radiobox selected" data="fgj" value="yes">有</span>
+    		<span class="radiobox" data="fgj" value="no">无</span>
+    		<span class="radiobox" data="fgj" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">倒车雷达</span>
+    		<span class="radiobox selected" data="dcld" value="origin">原车</span>
+    		<span class="radiobox" data="dcld" value="extern">加装</span>
+    		<span class="radiobox" data="zpzy" value="no">无</span>
+    		<span class="radiobox" data="dcld" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">轮毂材质</span>
+    		<span class="radiobox selected" data="lgcz" value="gang">铁(钢)</span>
+    		<span class="radiobox" data="lgcz" value="lu">铝</span>
+    		<span class="radiobox" data="lgcz" value="hejin">合金</span>
+    		<span class="radiobox" data="lgcz" value="unknown">不知道</span>
+    		</p>
+        </div>
+        </div>
+        <div class="subblock">
+        	<p style="padding:4px;">
+        <span class="title subtitle"><span class="h_gap" style="width:20px;"></span>&nbsp;&nbsp;车辆外观</span>
+        </p>
+        <div style="margin-left:55px;">
+            <p>
+    		<span class="item_name">是否发生过损伤</span>
+    		<span class="radiobox selected" data="sszk" value="yes">有</span>
+    		<span class="radiobox" data="sszk" value="no">无</span>
+    		<span class="radiobox" data="sszk" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">当前车身漆面状况</span>
+    		<span class="radiobox selected" data="qmzk" value="yes">有</span>
+    		<span class="radiobox" data="qmzk" value="no">无</span>
+    		<span class="radiobox" data="qmzk" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">是否全身做过漆</span>
+    		<span class="radiobox selected" data="zgq" value="yes">有</span>
+    		<span class="radiobox" data="zgq" value="no">无</span>
+    		<span class="radiobox" data="zgq" value="unknown">不知道</span>
+    		</p>
+        </div>
+        </div>
+        <div class="subblock">
+        	<p style="padding:4px;border-bottom:1px solid #c9c5c4;">
+        <span class="title subtitle"><span class="h_gap" style="width:20px;"></span>&nbsp;&nbsp;底盘部分</span>
+        </p>
+        <div style="margin-left:55px;">
+        <p>
+    		<span class="item_name">是否严重拖过底</span>
+    		<span class="radiobox selected" data="tgd" value="yes">有</span>
+    		<span class="radiobox" data="tgd" value="no">无</span>
+    		<span class="radiobox" data="tgd" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">减震器是否漏油</span>
+    		<span class="radiobox selected" data="jzqly" value="yes">有</span>
+    		<span class="radiobox" data="jzqly" value="no">无</span>
+    		<span class="radiobox" data="jzqly" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">刹车是否跑偏</span>
+    		<span class="radiobox selected" data="scpp" value="yes">有</span>
+    		<span class="radiobox" data="scpp" value="no">无</span>
+    		<span class="radiobox" data="scpp" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">行驶中松开方向盘是否跑偏</span>
+    		<span class="radiobox selected" data="fxppp" value="yes">有</span>
+    		<span class="radiobox" data="fxppp" value="no">无</span>
+    		<span class="radiobox" data="fxppp" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">底盘在颠簸路面的表现</span>
+    		<span class="radiobox selected" data="dpbx" value="no">扎实无异响</span>
+    		<span class="radiobox" data="dpbx" value="some">有少许异响</span>
+    		<span class="radiobox" data="dpbx" value="noise">异响偏大</span>
+    		</p>
+    		<p>
+    		<span class="item_name">轮胎状况</span>
+    		<span class="radiobox selected" data="ltzk" value="good">良好</span>
+    		<span class="radiobox" data="ltzk" value="ok">一般</span>
+    		<span class="radiobox" data="ltzk" value="poor">较差</span>
+    		<span class="radiobox" data="ltzk" value="unknown">不知道</span>
+    		</p>
+        </div>
+        </div>
+        <div class="subblock">
+        	<p style="padding:4px;">
+        <span class="title subtitle"><span class="h_gap" style="width:20px;"></span>&nbsp;&nbsp;车辆现状描述</span>
+        </p>
+        <div style="margin-left:55px;">
+            <p>
+    		<span class="item_name">备胎及随车工具是否齐全</span>
+    		<span class="radiobox selected" data="scgj" value="yes">有</span>
+    		<span class="radiobox" data="scgj" value="no">无</span>
+    		<span class="radiobox" data="scgj" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">所有功能开关是否正常</span>
+    		<span class="radiobox selected" data="kgzk" value="yes">有</span>
+    		<span class="radiobox" data="kgzk" value="no">无</span>
+    		<span class="radiobox" data="kgzk" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">各种仪表是否正常</span>
+    		<span class="radiobox selected" data="ybzk" value="yes">有</span>
+    		<span class="radiobox" data="ybzk" value="no">无</span>
+    		<span class="radiobox" data="ybzk" value="unknown">不知道</span>
+    		</p>
+    		<p>
+    		<span class="item_name">内饰完好程度</span>
+    		<span class="radiobox selected" data="nswh" value="yes">有</span>
+    		<span class="radiobox" data="nswh" value="no">无</span>
+    		<span class="radiobox" data="nswh" value="unknown">不知道</span>
+    		</p>
+    		<div>
+	    		<span class="item_name">内饰完好程度说明</span>
+	    		<div style="margin:16px 0 16px 40px;width:425px;">
+	    			<textarea id="nssm"></textarea>
+	    			<p style="text-align:center;margin: 4px auto;">(说明内容限于200字以内)</p>
+	    		</div>
+    		</div>
+    		</div>
+        </div>
+    </div>
+    <div>
+    	<p style="font-size:18px;margin:42px 60px;">
+    	<span>联系电话&nbsp;&nbsp;:&nbsp;&nbsp;</span><input type="text" style="width:145px;height:24px;border:1px solid #ccc;">
+    	<span class="common_style"style="display:inline-block;padding:0 6px;margin:0 14px;height:26px; line-height:26px;">获取验证码</span><input type="text" style="width:72px;height:24px;border:1px solid #ccc;">
+    	</p>
+    	<div class="common_style" style="width:230px;height:60px;text-align:center;line-height:60px;font-size:36px;margin-left:330px;">确认提交</div>
+    </div>
+</div>
+<div id="footer_section">
+    <div id="common_note">
+        <div class="note_item about_us">
+            <ul>
+                <li>检车无忧</li>
+                <li><a>关于我们</a></li>
+                <li><a>联系我们</a></li>
+                <li><a>新闻</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>加入我们</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_veh">
+            <ul>
+                <li>车辆相关</li>
+                <li><a>二手车买卖建议</a></li>
+                <li><a>限迁城市查询</a></li>
+                <li><a>过户流程</a></li>
+                <li><a>国家二手车检测标准</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_qa">
+            <ul>
+                <li>检车无忧</li>
+                <li><a>DCC384检测标准</a></li>
+                <li><a>质保范围</a></li>
+                <li><a>退款政策</a></li>
+            </ul>
+        </div>
+        <div class="note_item about_parner">
+            <ul>
+                <li>兄弟网站：</li>
+                <li class="diche_logo"></li>
+            </ul>
+        </div>
+        <div class="note_item weixing">
+            <span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+            <span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+    <div class="copyright">
+        <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+    </div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+$(".radiobox").bind("click",function(e){
+    var parent = $(e.target).parent();
+    $(".radiobox", parent).removeClass("selected");
+     $(e.target).addClass("selected");
+});
+var data = {};
+function collectData() {
+    var key;
+    var value;
+    var inputs = $(".form_block_1 input");
+    for(var i=0; i<inputs.length; i++){
+        key = $(inputs[i]).attr("name");
+        value = $(inputs[i]).val();
+        data[key] = value;
+    }
+    var radios = $(".selected");
+    for(var i=0; i<radios.length; i++){
+        key = $(radios[i]).attr("data");
+        value = $(radios[i]).attr("value");
+        data[key] = value;
+    }
+}
+$("#report_query").bind("click",function(e){
+    var input = $("input", $(e.target)).val();
+    if(input.length>0){
+        location.href="report.html?report_id="+input;
+    }
+});
+collectData();
+</script>
+</body>
+</html>

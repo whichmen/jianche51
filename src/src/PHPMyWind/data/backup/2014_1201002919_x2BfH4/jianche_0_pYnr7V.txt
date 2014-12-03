@@ -1,0 +1,2 @@
+INSERT INTO `jianche` VALUES('1','2','3','4');
+INSERT INTO `jianche` VALUES('2','1','1','1');

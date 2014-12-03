@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+#content_section {
+	width: 902px;
+}
+.courses {
+	font-size: 18px;
+}
+.blue_white {
+	display: inline-block;
+	background-color: #2a89c3;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	padding: 0 12px;
+}
+.left {
+	width: 630px;
+	float: left;
+}
+.left input {
+	width:192px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #dedede;
+}
+.left_form {
+	border: 1px solid #dedede;
+	padding: 10px 26px;
+	height: 270px;"
+}
+.left p {
+	height: 34px;
+}
+.lable {
+	display: inline-block;
+	width: 136px;
+	margin-right: 0;
+}
+.left span {
+	vertical-align: top;
+}
+#questions {
+	display: inline-block;
+	width:424px;
+	height: 100px;
+	border: 1px solid #dedede;
+}
+#check_code {
+	width: 90px;
+}
+.right {
+	width: 272px;
+	height: 290px;
+	float: left;
+}
+.right span {
+	margin-left: 16px;
+	height: 30px;
+	line-height: 30px;
+}
+.course_info {
+
+}
+.item {
+    margin-bottom: 36px;
+}
+.item_name {
+    font-size: 20px;
+    line-height: 36px;
+    color: #fc8123;
+}
+.item_content {
+	font-size: 18px;
+	line-height: 34px;
+}
+#course_table {
+	width: 900px;
+	height: 433px;
+	margin: 24px 0;
+	overflow: hidden;
+}
+#zhengshu {
+	width: 268px;
+	height: 192px;
+	overflow: hidden;
+}
+.baomingz {
+	color: #f19027;
+}
+.baomingks {
+	color: #4bb038;
+}
+.baomingjs {
+	color: #e61a19;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w style_3w_sel">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+     <div class="courses clearfix">
+     	<div class="left">
+     		<p><span class="blue_white">在线报名</span></p>
+     		<div class="left_form">
+     			<p><span class="lable">姓名：</span><span><input id="name"></span></p>
+     			<p><span class="lable">手机号码：</span><span><input id="phone"></span>
+     			<span class="blue_white" style="margin:0 30px;">验证码</span><span><input id="check_code"></span></p>
+     			<p><span class="lable">QQ:</span><span><input id="qq"></span></p>
+     			<p style="height:auto;"><span class="lable">急需了解问题:</span>
+     			<textarea id="questions"></textarea></p>
+     			<a href="javascript:void(0);"class="blue_white" style="display:block;width:50px;margin:20px auto;">提交</a>
+     		</div>
+     	</div>
+     	<div class="right">
+     		<p style="height: 34px;">
+     		<span class="blue_white">在线报名</span>
+     		</p>
+     		<div style="border: 1px solid #dedede;	height: 290px;">
+     			<p><span>11月12号</span><span>中级班</span><span>正在报名</span></p>
+     		</div>
+     	</div>
+     </div>
+     <div class="course_info">
+     	<p style="height:92px;line-height:92px; color:#2a89c3;font-size:20px;">中级二手车鉴定评估师</p>
+     	<div class="item">
+     		<p class="item_name">【适应人员】</p>
+     		<div class="item_content">各开展以旧换新业务的品牌汽车经销商；各二手车交易中心（市场）；二手车鉴定评估机构、资产评估机构等中介评估机构；其他从事机动车租赁、拍卖、报废回收、置换业务的企、事业单位的从业人员；有关车辆检测鉴定机构和其他从事机动车贷款、抵押、典当、保险、理赔、维修等业务的从业人员。</div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【报名条件】</p>
+     		<div class="item_content">依据《二手车鉴定评估师国家职业标准》的要求，报名参加中级二手车鉴定评估师培训应当具备以下条件：
+持有《中华人民共和国机动车驾驶证》C1照以上并具备以下条件之一：
+1、高中以上学历连续从事本职业工作5年以上；
+2、具有中等专科学校非机动车专业和非评估类专业毕业证书，连续从事本职业工作4年以上；
+3、具有中等专科学校机动车专业或评估类专业毕业证书，连续从事本职业工作3年以上；
+4、具有大专以上非机动车专业毕业证书，连续从事本职业工作2年以上；
+5、具有大专以上机动车专业毕业证书，连续从事本职业工作1年以上。</div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【培训方式】</p>
+     		<div class="item_content">采取非脱产培训。每期时间5天，不低于40学时。</div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【培训内容】</p>
+     		<div class="item_content">二手车行业发展概述；二手车手续检查；汽车基础知识；汽车结构知识；汽车技术状况鉴定（知识部分）；汽车技术状况鉴定（技能部分）；机动车使用寿命和报废标准；二手车评估的基本原理；市场价格比较法；收益现值法；重置成本法；二手车鉴定评估报告等。</div>
+     		<div id="course_table"><img src="res/pics/course.jpg"></div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【培训师资】</p>
+     		<div class="item_content">中级二手车鉴定评估师培训的师资队伍由专家级业内经验丰富的从业者及嘀车专家团队组成.</div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【考核方式】</p>
+     		<div class="item_content">中级二手车鉴定评估师考核分为理论知识考试和技能操作考试，理论知识考试采用闭卷必答形式，技能操作考试采用实际操作和现场答辩形式，理论知识考试和技能操作考试均实行百分制，成绩皆达60分及以上为合格。</div>
+     	</div>
+     	<div class="item">
+     		<p class="item_name">【培训证书】</p>
+     		<div class="item_content">考试合格由“国家人力资源和社会保障部门颁发”国家中级二手车鉴定评估师职业资格证书“。</div>
+     		<div id="zhengshu"><img src=""></div>
+     	</div>
+     </div>
+
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+function baoming(){
+    var name = $("#name").val();
+    var phone = $("#phone").val();
+    var qq = $("#qq").val();
+    var question = $("#questions").val();
+    var url = "";
+    $.post(url {
+        "name":name,
+        "phone":phone,
+        "qq":qq,
+        "question":question
+    },null);
+}
+$("#baoming").bind("click", baoming);
+</script>
+</body>
+</html>

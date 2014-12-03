@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+.part1 {
+    height: 342px;
+    /*background: url("res/yuyue.png") no-repeat 0 0;*/
+    border: 1px solid #908c89;
+    padding: 6px 10px;
+}
+.part1. img {
+	width:342px;
+	height: 280px;
+	float: right;
+}
+.title {
+	font-size: 24px;
+	height: 44px;
+	line-height: 44px;
+	color:#2592d5;
+	padding: 0 12px;
+}
+.part2 {
+	margin-top:8px;
+	border: 1px solid #908c89;
+	padding: 10px 20px;
+}
+.gray_area {
+	background-color: #f2f2f2;
+	padding: 8px;
+}
+.item {
+	width: 414px;
+	/*height: 124px;*/
+	float: left;
+}
+.sub_title {
+	height: 14px;
+	line-height: 14px;
+	padding: 10px;
+	font-size: 18px;
+	background: url("res/lne.jpg") repeat-x 1px 4px;
+	border-radius:2px;
+	margin-bottom: 8px;
+}
+.sub_content {
+	font-size: 14px;
+	line-height: 24px;
+	color: #9c9c9c;
+	width: 352px;
+	padding: 10px 0 0 62px;
+	background: url("res/yanbao.png") no-repeat 0px 0px;
+}
+.introduce {
+	display: inline-block;
+	width:474px;
+	font-size: 16px;
+	line-height: 32px;
+	float: left;
+	margin: 24px;
+}
+.service_pic {
+	margin-left:  46px;
+	width: 322px;
+	height: 200px;
+	float: left;
+	overflow: hidden;
+}
+.part4 {
+	margin-top:12px;
+	padding-top: 40px;
+	border: 1px solid #908c89;
+	font-size: 20px;
+}
+.part4 .title {
+	font-size: 20px;
+	color:#2592d5;
+    height: 40px;
+    line-height: 40px;
+	border-bottom: 1px solid #2592d5;
+}
+.question {
+	padding-left: 20px;
+	background: url("res/share.png") no-repeat -282px -290px;
+	height: 40px;
+	line-height: 40px;
+}
+.answer {
+	font-size: 18px;
+	line-height: 26px;
+	color: #cbcbcb;
+	padding-bottom: 12px;
+	padding-left: 16px;
+	height:90px;
+}
+.yanbao_link {
+	height: 38px;
+	line-height: 38px;
+	background: url("res/yan_bao_disc.gif") no-repeat 0px 12px;
+	border-bottom: 1px dashed #9c9c9c;
+	padding-left: 20px;
+}
+.more {
+	display: inline-block;
+	color:#fc8123;
+	font-size:14px;
+	margin: 3px 0;
+	position: absolute;
+	right: 0;
+}
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w style_3w_sel" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="part1">
+        <img src="res/yanbao.jpg">
+    </div>
+    <div class="part2 clearfix">
+        <p class="title">无忧超值延保服务</p>
+	    <div class="gray_area clearfix">
+	    	<div class="item">
+	    		<p class="sub_title">动力智选&nbsp;</p>
+	    		<p class="sub_content" style="background-position:10px 16px;">针对汽车最核心部件，日常行驶中工作最频繁的部件，提供维修保障。保修项目有发动机、变速器、前驱总成、后桥总成、刹车系统。</p>
+	    	</div>
+	    	<div class="item" style="float: right">
+	    		<p class="sub_title">综合优选&nbsp;</p>
+	    		<p class="sub_content" style="background-position:10px -144px;">包含了动力智选的保修范围，增加了更多的部件，保修覆盖更广。除了动力智选的保修范围外还增加了转向系统、前悬挂系统、电器系统、空调系统的保修服务。</p>
+	    	</div>
+	    	<div class="item">
+	    		<p class="sub_title">全面精选&nbsp;</p>
+	    		<p class="sub_content" style="background-position:10px -286px;">全面精选：包含了动力智选和综合优选的保修范围，同时增加了更多的昂贵配件，保障更全面。除了动力智选和综合优选的保修项目外，还增加了涡轮增压、防盗系统、电子稳定控制系统、电子牵引控制系统、防侧翻车系统、以及更多的高配置车内的部件的保修服务。</p>
+	    	</div>
+	    	<div class="item" style="float: right">
+	    		<p class="sub_title">VIP服务&nbsp;</p>
+	    		<p class="sub_content" style="background-position:10px -490px;">延保客户还可享受接送车代保养、道路救援、协助处理保险、代年检等多项贴心服务。并有专业车务顾问定期为您提供车辆的保养建议，为您安全出行保驾护航。。</p>
+	    	</div>
+	    </div>
+    </div>
+    <!--<div  class="part2 clearfix">
+    	<p class="title">无忧VIP服务</p>
+    	<div  class="introduce">
+	    	<p style="line-height:24px;font-size:16px;">
+	    		VIP服务为您提供接送车代保养、道路救援、协助处理保险事故、代年检等多项贴心服务。并在保修期间在线下服务中心针对保养、维修享受5折工时费的优惠政策。并有专业车务顾问定期为您提供车辆的合理保养建议，助您全面了解爱车的实际状况。
+	    	</p>
+	    </div>
+	    <div class="service_pic">
+	    	<img src="res/index.png">
+	    </div>
+    </div>-->
+    <div class="part4 clearfix">
+    	<div style="float:left;width:543px;padding:0 30px;border-right:1px solid #999999;">
+    		<p class="title">延保相关信息</p>
+    		<div id="cjwt">
+    			<p class="question">外迁车辆是否还有延保服务？</p>
+    			<p class="answer">保养这个的钱有多有少，按照不同的汽车，每个汽车配件也都不一样，价钱上也就不尽相同，但是我们的保养配件都相对4S店价格要低。</p>
+    			<p class="question">延保这个要多少钱啊</p>
+    			<p class="answer">保养这个的钱有多有少，按照不同的汽车，每个汽车配件也都不一样，价钱上也就不尽相同，但是我们的保养配件都相对4S店价格要低。</p>
+    			<p class="question">保养这个要多少钱啊</p>
+    			<p class="answer">保养这个的钱有多有少，按照不同的汽车，每个汽车配件也都不一样，价钱上也就不尽相同，但是我们的保养配件都相对4S店价格要低。</p>
+    		</div>
+    	</div>
+    	<div style="float:left;width:346px;padding:0 14px;">
+    		<p class="title">延保相关链接</p>
+    		<div style="position:relative;">
+    			<ul style="height:350px;">
+	    			<a href="" style="color:#000;"><li class="yanbao_link">延保范围相关解答</li></a>
+	    			<a href="" style="color:#000;"><li class="yanbao_link">汽车发动机的保养方法</li></a>
+	    			<a href="" style="color:#000;"><li class="yanbao_link">汽车出现故障怎么判断</li></a>
+	    		</ul>
+	    		<a class="more" href="">查看更多>></a>
+    		</div>
+    	</div>
+    </div>
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script>
+var url = "jianche/jianche51.php?m=Home&c=Index&a=get_all_items&method_name=chang_jian_wen_ti&start=0&length=3";
+function fillData(obj) {
+	var html="";
+	var count = obj.length > 3 ?3 : obj.length;
+    for(var i=0; i<count; i++){
+    	var nei_rong = obj[i].nei_rong;
+    	if(nei_rong.length > 60)
+    		nei_rong = nei_rong.substring(0,60)+"...";
+         html+='<p class="question">'+obj[i].biao_ti+'</p><p class="answer">'+nei_rong+'</p>';
+    }
+    $("#cjwt").html(html);
+}
+
+$.ajax({
+     type: "GET",
+     url: host + url,
+     success: function(json){
+        if(json == null || json.return_code == undefined || json.return_code != "success"){
+        	return;
+        }
+        fillData(json["data"]["yan_bao"]);
+	},
+	error: function(text){
+	}
+});
+</script>
+</body>
+</html>

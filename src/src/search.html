@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="jquery-1.11.0.min.js"></script>
+<style>
+.query_input {
+	border: 2px solid #2692d3;
+	height: 40px;
+	width: 620px;
+	margin: 30px auto;
+}
+.query_input .input_wrap {
+	display: inline-block;
+	width:4800px;
+	height: 40px;
+
+}
+.query_input input {
+	display: inline-block;
+	width:480px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+}
+#report_query {
+	display:inline-block;
+	width:140px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	vertical-align: top;
+}
+.title {
+	font-size: 24px;
+	height: 44px;
+	line-height: 44px;
+	color:#2592d5;
+	padding: 0 12px;
+	border-bottom: 4px solid #2692d3;
+}
+.part2 {
+	margin-top:8px;
+	border: 1px solid #ccc;
+	padding: 10px 20px;
+}
+.part2 .left {
+    width: 690px;
+    float: left;
+    
+}
+.part2 .right {
+    width: 248px;
+    float: left;
+}
+.team {
+	border-right: 4px solid #2692d3;
+}
+.team .item {
+	margin-top: 30px;
+	width:318px;
+	float: left;
+	font-size: 14px;
+	margin-left:10px;
+}
+.team img {
+	display: block;
+	float: left;
+	width:104px;
+	height: 108px;
+	margin-right:14px;
+}
+.team .sub_title {
+	font-size: 16px;
+	line-height:32px;
+}
+.q_box {
+    padding:30px 18px 0;
+}
+.q_box input {
+	width:156px;
+	border: 1px solid #82c0fd;
+	height:32px 
+}
+.q_box select {
+	width:54px;
+	border: 1px solid #82c0fd;
+	height:34px 
+}
+.q_box textarea {
+	width:206px;
+	height: 138px;
+	border: 1px solid #82c0fd;
+}
+.left .title,.right .title {
+	font-size: 18px;
+	line-height: 60px;
+	border-bottom: 0px;
+}
+.part2 .left {
+	width:720px;
+}
+.part2 .right {
+	width:172px;
+	margin-left: 20px;
+}
+.result_pannel {
+	height: 556px;
+	border:1px solid #ccc;
+}
+.keywords {
+	height: 264px;
+	border:1px solid #ccc;
+	color:#2692d3;
+	font-size: 12px;
+	padding: 30px 10px;
+}
+.pager {
+    height: 16px;
+}
+#result_list {
+	height: 300px;
+	width:600px;
+	padding: 20px;
+}
+#result_list li {
+	font-size: 16px;
+	line-height: 34px;
+}
+#result_list li span {
+	display: inline-block;
+}
+#result_list .biao_ti {
+    width:345px;
+}
+#result_list .pub_time {
+     margin: 0 30px;
+}
+#result_list .state {
+    margin: 0 30px;
+}
+<li><span class="biao_ti">花香二手车买卖过户怎么办？</span><span class="pub_time">2014-5-19</span><span class="state">已解决</span></li>
+</style>
+</head>
+<body>
+<section id="header_section">
+	<div id="logo_area">
+		<div style="width:980px;margin:0 auto;height:75px;">
+		    <div id="logo"></div>
+		    <div id="top_search">
+		    	<input id="input_top_search" name="input_top_search" placeholder="输入查找内容后回车"onkeypress="if(event.keyCode==13) {btn.click();return false;}">
+		    	<input type="submit" name="btn" id="btn" value="提交" style="display:none;" onclick="alert(input_top_search.value);return false;" />
+		    </div>
+		    <div id="top_tel"></div>
+	    	
+	    </div>
+	</div>
+	<div id="nav_area">
+	    <div class="nav_content">
+	    	<a href="index.html" class="style_3w">首&nbsp;&nbsp;页</a>
+	    	<a href="jianche.html" class="style_3w">检&nbsp;&nbsp;测</a>
+	    	<a class="style_3w" id="service_downlist">服&nbsp;&nbsp;务</a>
+	    	<a href="questions.html" class="style_3w style_3w_sel">问&nbsp;&nbsp;答</a>
+	    	<a href="onlinevalue.html" class="style_4w">在&nbsp;线&nbsp;评&nbsp;估</a>
+	    	<a href="qa.html" class="style_4w">常&nbsp;见&nbsp;问&nbsp;题</a>
+	    	<span style="width:28px;"></span>
+	    	<span id="accout_area">
+	    		<a id="reg" href="javascript:void(0);" style="padding:0 15px;margin-left:30px;">注&nbsp;册</a>
+	    		<a id="login" href="javascript:void(0);" style="padding:0 15px;">登&nbsp;录</a>
+	    	</span>
+	    	<div class="sub_nav">
+		    	<ul>
+		    		<li><a href="peimai.html">陪买</a></li>
+		    		<li><a href="baoyang.html">保养</a></li>
+		    		<li><a href="vip.html">大客户</a></li>
+		    		<li><a href="yanbao.html">延保</a></li>
+		    		<li><a href="training.html">培训</a></li>
+		    	</ul>
+	        </div>
+	        <div id="login_pop" class="big_pop clearfix" style="display:none;">
+	            <a  id="login_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">登&nbsp;&nbsp;&nbsp;&nbsp;陆</p>
+		        	<div style="font-size:20px;">
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入密码&nbsp;&nbsp;</span><input></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="login_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">登&nbsp;&nbsp;陆</div>
+		        	</div>	
+	            </div>
+	        </div>
+	        <div id="reg_pop" class="big_pop clearfix" style="display:none;">
+	            <a id="reg_close" href="javascript:void(0);" class="close_icon"></a>
+	            <div class="pop_content">
+		            <p class="title">注&nbsp;&nbsp;&nbsp;&nbsp;册</p>
+		        	<div style="font-size:20px;">
+		        	    <p style="height:60px;line-height:60px;"><span>用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_uname"></p>
+		        		<p style="height:60px;line-height:60px;"><span>联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="reg_upwd"><span class="btn_get_ccode common_style" style="padding:0 10px;height: 42px;line-height: 42px;">获取验证码</span></p>
+		        		<p style="height:60px;line-height:60px;"><span>请输入验证码&nbsp;</span><input id="reg_ccode"></p>
+		        	</div>
+		        	<div style="margin:10px 0;">
+		        	    <div style="float:left;width:110px;
+		        	    height:64px;font-size:10px;line-height:21px;"><p>客服电话</p><p style="color:#ff8989;">4009-222-010</p></div>
+		        		<div id="reg_submit" style="font-size:24px;float:left;padding:0 50px;margin-left: 100px;" class="common_style">注&nbsp;&nbsp;册</div>
+		        	</div>	
+	            </div>
+	        </div>
+	    </div>
+
+	</div>
+	<div class="service_online">
+		<a style="display:inline-block;width:98px;height:114px;"></a>
+	</div>
+</section>
+<div class="body_wrap">
+<div id="content_section">
+    <div class="part1">
+        <div class="query_input clearfix">
+	    	<input><span id="report_query" class="common_style">查询</span>
+	    </div>
+    </div>
+    <div class="part2 clearfix">
+       <div class="left">
+       	    <p class="title">您搜索的是<span> 二手车交易信息</span></p>
+       	    <div class="result_pannel">
+       	    	<p class="common_style" style="width:140px;height:40px;line-height:40px;text-align:center;">搜索结果</p>
+       	    	<ul id="result_list">
+       	    		<li><span class="biao_ti">花香二手车买卖过户怎么办？</span><span class="pub_time">2014-5-19</span><span class="state">已解决</span></li>
+       	    	</ul>
+       	    	<div class="pager"></div>
+       	    </div>
+       </div>
+       <div class="right">
+       	    <p  class="title">其它人还搜</p>
+       	    <div class="keywords">
+       	    	<a class="search_keyword" href="">二手车交易</a>
+       	    </div>
+       </div>
+    </div>
+</div>
+<div id="footer_section">
+	<div id="common_note">
+	    <div class="note_item about_us">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>关于我们</a></li>
+	    		<li><a>联系我们</a></li>
+	    		<li><a>新闻</a></li>
+	    		<li><a>常见问题</a></li>
+	    		<li><a>加入我们</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_veh">
+	    	<ul>
+	    		<li>车辆相关</li>
+	    		<li><a>二手车买卖建议</a></li>
+	    		<li><a>限迁城市查询</a></li>
+	    		<li><a>过户流程</a></li>
+	    		<li><a>国家二手车检测标准</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_qa">
+	    	<ul>
+	    		<li>检车无忧</li>
+	    		<li><a>DCC384检测标准</a></li>
+	    		<li><a>质保范围</a></li>
+	    		<li><a>退款政策</a></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item about_parner">
+	    	<ul>
+	    		<li>兄弟网站：</li>
+	    		<li class="diche_logo"></li>
+	    	</ul>
+	    </div>
+	    <div class="note_item weixing">
+	    	<span style="display:inline-block;vertical-align: top;margin:4px;color:#41a1d3">官方微信<br>检车无忧</span>
+	    	<span style="display:inline-block;vertical-align: top;margin:16px 12px;height:106px;width:106px;background: url('res/share.png') no-repeat no-repeat -193px -902px;"></span>
+	    </div>
+	    <span class="clearfix"></span>
+	</div>
+	<div class="copyright">
+	    <span style="width:360px;"></span>
+        <span style="width:400px;">Copyright @2014北京嘀车科技有限公司</span>
+        <span style="width:200px;font-size:14px;"><a>电脑版</a>&nbsp;|&nbsp;<a>手机版</a></span>
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+<script type="text/javascript">
+var url = "jianche/jianche51.php?m=Home&c=Index&a=add_item_post_method";
+function fillData(d) {
+	var html = "";
+	var data = d.data;
+	for(var i=0; i< data.length; i++){
+		html += '<li><span class="biao_ti">'+data[i].biao_ti+'</span><span class="pub_time">'+data[i].posttime+'</span><span class="state">'+data[i].jie_jue_zhuang_tai+'</span></li>';
+	}
+	$("#result_list").html(html);
+	var hot_key = data.hot_key;
+	if(hot_key != null){
+		for(var i=0; i< hot_key.length; i++){
+			html += '<a class="search_keyword" href="search.html?query='+hot_key[i]+'">'+hot_key[i]+'</a>'
+		}
+	}
+}
+
+function Query(key_word){
+	$.ajax(url, function(text){
+		if(text.length <= 0)
+			return ;
+		var obj = JSON.parse(text);
+		if(obj.return_code == undefined || obj.return_code != "success")
+			return ;
+		fillData(obj["data"]);
+	});
+}
+
+$("#report_query").bind("click",function(e){
+    var input = $(".query_input input").val();
+    if(input.length > 0)
+        Query(input);
+});
+
+$(document).ready(function(){
+    var query = $.getUrlParam('query');
+    if(query.length > 0){
+          Query(query);
+    }
+});
+</script>
+</body>
+</html>
